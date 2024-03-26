@@ -50,34 +50,30 @@
             // 
             // btn_DetayGetir
             // 
-            btn_DetayGetir.Location = new Point(363, 691);
-            btn_DetayGetir.Margin = new Padding(4, 5, 4, 5);
+            btn_DetayGetir.Location = new Point(231, 415);
             btn_DetayGetir.Name = "btn_DetayGetir";
-            btn_DetayGetir.Size = new Size(213, 59);
+            btn_DetayGetir.Size = new Size(136, 35);
             btn_DetayGetir.TabIndex = 50;
             btn_DetayGetir.Text = "DetayGetir";
             btn_DetayGetir.UseVisualStyleBackColor = true;
             // 
             // btnDailyData
             // 
-            btnDailyData.Location = new Point(70, 691);
-            btnDailyData.Margin = new Padding(4, 5, 4, 5);
+            btnDailyData.Location = new Point(45, 415);
             btnDailyData.Name = "btnDailyData";
-            btnDailyData.Size = new Size(213, 59);
+            btnDailyData.Size = new Size(136, 35);
             btnDailyData.TabIndex = 49;
             btnDailyData.Text = "Get Daily Data";
             btnDailyData.UseVisualStyleBackColor = true;
-            //btnDailyData.Click += btnDailyData_Click_1;
             // 
             // lvi_Food
             // 
             lvi_Food.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14, columnHeader15 });
             lvi_Food.FullRowSelect = true;
             lvi_Food.GridLines = true;
-            lvi_Food.Location = new Point(638, 105);
-            lvi_Food.Margin = new Padding(4, 5, 4, 5);
+            lvi_Food.Location = new Point(406, 63);
             lvi_Food.Name = "lvi_Food";
-            lvi_Food.Size = new Size(506, 425);
+            lvi_Food.Size = new Size(323, 257);
             lvi_Food.TabIndex = 48;
             lvi_Food.UseCompatibleStateImageBehavior = false;
             lvi_Food.View = View.Details;
@@ -99,10 +95,9 @@
             lvi_Meal.Columns.AddRange(new ColumnHeader[] { meal, columnHeader1, columnHeader2 });
             lvi_Meal.FullRowSelect = true;
             lvi_Meal.GridLines = true;
-            lvi_Meal.Location = new Point(70, 105);
-            lvi_Meal.Margin = new Padding(4, 5, 4, 5);
+            lvi_Meal.Location = new Point(45, 63);
             lvi_Meal.Name = "lvi_Meal";
-            lvi_Meal.Size = new Size(506, 425);
+            lvi_Meal.Size = new Size(323, 257);
             lvi_Meal.TabIndex = 47;
             lvi_Meal.UseCompatibleStateImageBehavior = false;
             lvi_Meal.View = View.Details;
@@ -125,87 +120,80 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(70, 44);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(45, 26);
             label1.Name = "label1";
-            label1.Size = new Size(112, 25);
+            label1.Size = new Size(70, 15);
             label1.TabIndex = 46;
             label1.Text = "Choose Day";
             // 
             // dtp_SelectedDay
             // 
-            dtp_SelectedDay.Location = new Point(286, 38);
-            dtp_SelectedDay.Margin = new Padding(4);
+            dtp_SelectedDay.Location = new Point(182, 23);
+            dtp_SelectedDay.Margin = new Padding(3, 2, 3, 2);
             dtp_SelectedDay.Name = "dtp_SelectedDay";
-            dtp_SelectedDay.Size = new Size(289, 33);
+            dtp_SelectedDay.Size = new Size(185, 23);
             dtp_SelectedDay.TabIndex = 45;
             // 
             // lbl_DifferenceCalories
             // 
             lbl_DifferenceCalories.AutoSize = true;
-            lbl_DifferenceCalories.Location = new Point(468, 643);
-            lbl_DifferenceCalories.Margin = new Padding(4, 0, 4, 0);
+            lbl_DifferenceCalories.Location = new Point(298, 386);
             lbl_DifferenceCalories.Name = "lbl_DifferenceCalories";
-            lbl_DifferenceCalories.Size = new Size(102, 25);
+            lbl_DifferenceCalories.Size = new Size(64, 15);
             lbl_DifferenceCalories.TabIndex = 44;
             lbl_DifferenceCalories.Text = "...  Calories";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(70, 643);
-            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Location = new Point(45, 386);
             label10.Name = "label10";
-            label10.Size = new Size(320, 25);
+            label10.Size = new Size(199, 15);
             label10.TabIndex = 43;
             label10.Text = "The difference between the two data";
             // 
             // lbl_DailyMaxCalories
             // 
             lbl_DailyMaxCalories.AutoSize = true;
-            lbl_DailyMaxCalories.Location = new Point(468, 603);
-            lbl_DailyMaxCalories.Margin = new Padding(4, 0, 4, 0);
+            lbl_DailyMaxCalories.Location = new Point(298, 362);
             lbl_DailyMaxCalories.Name = "lbl_DailyMaxCalories";
-            lbl_DailyMaxCalories.Size = new Size(102, 25);
+            lbl_DailyMaxCalories.Size = new Size(64, 15);
             lbl_DailyMaxCalories.TabIndex = 42;
             lbl_DailyMaxCalories.Text = "...  Calories";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(70, 603);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(45, 362);
             label8.Name = "label8";
-            label8.Size = new Size(216, 25);
+            label8.Size = new Size(136, 15);
             label8.TabIndex = 41;
             label8.Text = "Daily Maximum Calories";
             // 
             // lbl_DailyTotalCalories
             // 
             lbl_DailyTotalCalories.AutoSize = true;
-            lbl_DailyTotalCalories.Location = new Point(468, 559);
-            lbl_DailyTotalCalories.Margin = new Padding(4, 0, 4, 0);
+            lbl_DailyTotalCalories.Location = new Point(298, 335);
             lbl_DailyTotalCalories.Name = "lbl_DailyTotalCalories";
-            lbl_DailyTotalCalories.Size = new Size(102, 25);
+            lbl_DailyTotalCalories.Size = new Size(64, 15);
             lbl_DailyTotalCalories.TabIndex = 40;
             lbl_DailyTotalCalories.Text = "...  Calories";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(70, 559);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(45, 335);
             label3.Name = "label3";
-            label3.Size = new Size(172, 25);
+            label3.Size = new Size(106, 15);
             label3.TabIndex = 39;
             label3.Text = "Daily Total Calories";
             // 
             // MyMealHistory
             // 
-            AutoScaleDimensions = new SizeF(11F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1202, 803);
+            ClientSize = new Size(765, 482);
             Controls.Add(btn_DetayGetir);
             Controls.Add(btnDailyData);
             Controls.Add(lvi_Food);
@@ -218,6 +206,8 @@
             Controls.Add(label8);
             Controls.Add(lbl_DailyTotalCalories);
             Controls.Add(label3);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "MyMealHistory";
             Text = "MyMealHistory";
             ResumeLayout(false);

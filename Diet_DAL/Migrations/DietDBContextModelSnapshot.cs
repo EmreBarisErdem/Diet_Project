@@ -1494,7 +1494,7 @@ namespace Diet_DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuID"));
 
-                    b.Property<DateTime?>("MealDate")
+                    b.Property<DateTime>("MealDate")
                         .HasColumnType("datetime");
 
                     b.Property<int>("MealID")

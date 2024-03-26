@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Diet_DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class yetooo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -72,7 +72,7 @@ namespace Diet_DAL.Migrations
                     PersonID = table.Column<int>(type: "int", nullable: false),
                     MealID = table.Column<int>(type: "int", nullable: false),
                     TotalCaloriesByMeal = table.Column<int>(type: "integer", maxLength: 5000, nullable: true),
-                    MealDate = table.Column<DateTime>(type: "datetime", nullable: true)
+                    MealDate = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {

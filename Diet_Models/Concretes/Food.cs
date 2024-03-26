@@ -27,6 +27,9 @@ namespace Diet_Models.Concretes
 
         public Portion Portion { get; set; } = Portion.Standart;
 
+        [NotMapped]
+        public int TotalCalories { get; set; } = 0;
+
 
 
 
@@ -36,6 +39,27 @@ namespace Diet_Models.Concretes
         public virtual FoodCategory? FoodCategory { get; set; }
 
         public Menu? Menu { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Quantity}x {Name}, {Portion}, {Calories * Quantity * PortionValue()} Calories";
+        }
+
+        private double PortionValue()
+        {
+            if(Portion is Portion.Double)
+            {
+                return 2;
+            }
+            else if(Portion is Portion.Standart)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0.5;
+            }
+        }
 
 
     }

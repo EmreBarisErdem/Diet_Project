@@ -44,22 +44,22 @@ namespace Diet_PL
             foreach (Food food in lbox_Breakfast.Items)
             {
 
-                totalCalories = food.Quantity * food.Calories;
+                food.TotalCalories = food.Quantity * food.Calories;
 
                 if (food.Portion is Portion.Double)
                 {
-                    totalCalories = 2;
+                    food.TotalCalories *= 2;
                 }
                 else if (food.Portion is Portion.Standart)
                 {
-                    totalCalories = 1;
+                    food.TotalCalories *= 1;
                 }
                 else
                 {
-                    totalCalories /= 2;
+                    food.TotalCalories /= 2;
                 }
 
-                bool control = foodServices.AddOrUpdate(food);
+                totalCalories += food.TotalCalories;
 
             }
 
@@ -70,19 +70,28 @@ namespace Diet_PL
         {
             totalCalories = 0;
 
-            int quantity = (int)nud_Quantity.Value;
-
-            Portion portion = (Portion)cmb_Portion.SelectedItem;
 
             foreach (Food food in lbox_Lunch.Items)
             {
-                Food newFood = foodServices.GetByID(food.FoodID);
 
-                // totalCalories += food.CalculatedCalories;  // algoritma lazım
+                food.TotalCalories = food.Quantity * food.Calories;
 
-                bool control = foodServices.AddOrUpdate(newFood);
+                if (food.Portion is Portion.Double)
+                {
+                    food.TotalCalories *= 2;
+                }
+                else if (food.Portion is Portion.Standart)
+                {
+                    food.TotalCalories *= 1;
+                }
+                else
+                {
+                    food.TotalCalories /= 2;
+                }
+
+                totalCalories += food.TotalCalories;
+
             }
-
 
             lbl_Lunch_Calories.Text = $"{totalCalories} Calories";
         }
@@ -91,19 +100,28 @@ namespace Diet_PL
         {
             totalCalories = 0;
 
-            int quantity = (int)nud_Quantity.Value;
-
-            Portion portion = (Portion)cmb_Portion.SelectedItem;
 
             foreach (Food food in lbox_Dinner.Items)
             {
-                Food newFood = foodServices.GetByID(food.FoodID);
 
-                //totalCalories += food.CalculatedCalories;  // algoritma lazım
+                food.TotalCalories = food.Quantity * food.Calories;
 
-                bool control = foodServices.AddOrUpdate(newFood);
+                if (food.Portion is Portion.Double)
+                {
+                    food.TotalCalories *= 2;
+                }
+                else if (food.Portion is Portion.Standart)
+                {
+                    food.TotalCalories *= 1;
+                }
+                else
+                {
+                    food.TotalCalories /= 2;
+                }
+
+                totalCalories += food.TotalCalories;
+
             }
-
 
             lbl_Dinner_Calories.Text = $"{totalCalories} Calories";
         }
@@ -250,9 +268,9 @@ namespace Diet_PL
         {
             Menu menu = new Menu();
 
-            Meal meal = mealServices.GetMealByID(2); // 1 == Breakfast
+            Meal meal = mealServices.GetMealByID(2); // 2 == Lunch
 
-            BreakFastCaloriesCalculator(out int calories);
+            LunchCaloriesCalculator(out int calories);
 
             menu.TotalCaloriesByMeal = calories;
             menu.MealID = meal.MealID;
@@ -293,7 +311,7 @@ namespace Diet_PL
 
             Meal meal = mealServices.GetMealByID(3); // 1 == Breakfast
 
-            BreakFastCaloriesCalculator(out int calories);
+            DinnerCaloriesCalculator(out int calories);
 
             menu.TotalCaloriesByMeal = calories;
             menu.MealID = meal.MealID;
