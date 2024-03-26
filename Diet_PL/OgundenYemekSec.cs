@@ -62,6 +62,10 @@ namespace Diet_PL
             Food food = (lbox_Foods.SelectedItem as Food);
 
             lbl_SelectedFood_Calories.Text = $"{food.Calories} Calories";
+
+            nud_Quantity.Value = food.Quantity;
+
+            cmb_Portion.SelectedItem = food.Portion;
         }
 
         private void btn_AddFood_Click(object sender, EventArgs e)
@@ -70,10 +74,9 @@ namespace Diet_PL
             {
                 Food food = (lbox_Foods.SelectedItem as Food);
 
-                int quantity = (int)nud_Quantity.Value;
+                food.Quantity = (int)nud_Quantity.Value;
 
-                Portion portion = (Portion)cmb_Portion.SelectedItem;
-
+                food.Portion = (Portion)cmb_Portion.SelectedItem;
 
                 Meal meal = cmb_ChooseMeal.SelectedItem as Meal;
 
@@ -162,18 +165,27 @@ namespace Diet_PL
         private void BreakFastCaloriesCalculator(out int totalCalories)
         {
             totalCalories = 0;
-
-            int quantity = (int)nud_Quantity.Value;
-
-            Portion portion = (Portion)cmb_Portion.SelectedItem;
+         
 
             foreach (Food food in lbox_Breakfast.Items)
             {
-                Food newFood = foodServices.GetByID(food.FoodID);
 
-               // totalCalories += food.CalculatedCalories; // algoritma lazım
+                totalCalories = food.Quantity * food.Calories;
 
-                bool control = foodServices.AddOrUpdate(newFood);
+                if(food.Portion is Portion.Double)
+                {
+                    totalCalories *= 2;
+                }
+                else if(food.Portion is Portion.Standart)
+                {
+                    totalCalories *= 1;
+                }
+                else
+                {
+                    totalCalories /= 2;
+                }
+
+                bool control = foodServices.AddOrUpdate(food);
 
             }
 
