@@ -1,0 +1,147 @@
+﻿using CalorieProject_Models.Concretes;
+using Diet_Models.Concretes;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CalorieProject_DAL.Configurations
+{
+    public class Food_CFG : IEntityTypeConfiguration<Food>
+    {
+        public void Configure(EntityTypeBuilder<Food> builder)
+        {
+            builder.Property(x => x.Name).HasColumnType("varchar(30)");
+            builder.Property(x => x.Quantity).HasColumnType("integer").HasMaxLength(100);
+            builder.Property(x => x.Calories).HasColumnType("integer").HasMaxLength(1000);
+            builder.Property(x => x.Grams).HasColumnType("integer").HasMaxLength(1000);
+            builder.Property(x => x.PicturePath).HasColumnType("varchar(250)");
+
+            builder.HasData(
+                    new Food { FoodID = 1, Name = "Şeftali", FoodCategoryID = 1, Calories = 39 },
+                    new Food { FoodID = 2, Name = "Üzüm", FoodCategoryID = 1, Calories = 69 },
+                    new Food { FoodID = 3, Name = "Çilek", FoodCategoryID = 1, Calories = 32 },
+                    new Food { FoodID = 4, Name = "Zeytin", FoodCategoryID = 1, Calories = 115 },
+                    new Food { FoodID = 5, Name = "Muz", FoodCategoryID = 1, Calories = 89 },
+                    new Food { FoodID = 6, Name = "Elma", FoodCategoryID = 1, Calories = 52 },
+                    new Food { FoodID = 7, Name = "Portakal", FoodCategoryID = 1, Calories = 47 },
+                    new Food { FoodID = 8, Name = "Mandalina", FoodCategoryID = 1, Calories = 53 },
+                    new Food { FoodID = 9, Name = "Nar", FoodCategoryID = 1, Calories = 83 },
+                    new Food { FoodID = 10, Name = "Limon", FoodCategoryID = 1, Calories = 29 },
+                    new Food { FoodID = 11, Name = "Kayısı", FoodCategoryID = 1, Calories = 48 },
+                    new Food { FoodID = 12, Name = "İncir", FoodCategoryID = 1, Calories = 74 },
+                    new Food { FoodID = 13, Name = "Erik", FoodCategoryID = 1, Calories = 46 },
+                    new Food { FoodID = 14, Name = "Ayva", FoodCategoryID = 1, Calories = 57 },
+                    new Food { FoodID = 15, Name = "Avakado", FoodCategoryID = 1, Calories = 160 },
+                    new Food { FoodID = 16, Name = "Ananas", FoodCategoryID = 1, Calories = 50 },
+                    new Food { FoodID = 17, Name = "Kiraz", FoodCategoryID = 1, Calories = 50 },
+                    new Food { FoodID = 18, Name = "Kivi", FoodCategoryID = 1, Calories = 61 },
+                    new Food { FoodID = 19, Name = "Bamya", FoodCategoryID = 2, Calories = 33 },
+                    new Food { FoodID = 20, Name = "Bezelye", FoodCategoryID = 2, Calories = 81 },
+                    new Food { FoodID = 21, Name = "Biber", FoodCategoryID = 2, Calories = 27 },
+                    new Food { FoodID = 22, Name = "Brokoli", FoodCategoryID = 2, Calories = 34 },
+                    new Food { FoodID = 23, Name = "Domates", FoodCategoryID = 2, Calories = 18 },
+                    new Food { FoodID = 24, Name = "Salatalık", FoodCategoryID = 2, Calories = 16 },
+                    new Food { FoodID = 25, Name = "Enginar", FoodCategoryID = 2, Calories = 47 },
+                    new Food { FoodID = 26, Name = "Havuç", FoodCategoryID = 2, Calories = 41 },
+                    new Food { FoodID = 27, Name = "Ispanak", FoodCategoryID = 2, Calories = 23 },
+                    new Food { FoodID = 28, Name = "Pırasa", FoodCategoryID = 2, Calories = 61 },
+                    new Food { FoodID = 29, Name = "Kabak", FoodCategoryID = 2, Calories = 26 },
+                    new Food { FoodID = 30, Name = "Patates", FoodCategoryID = 2, Calories = 77 },
+                    new Food { FoodID = 31, Name = "Mantar", FoodCategoryID = 2, Calories = 22 },
+                    new Food { FoodID = 32, Name = "Mısır", FoodCategoryID = 2, Calories = 96 },
+                    new Food { FoodID = 33, Name = "Patlıcan", FoodCategoryID = 2, Calories = 25 },
+                    new Food { FoodID = 34, Name = "Sarımsak", FoodCategoryID = 2, Calories = 149 },
+                    new Food { FoodID = 35, Name = "Turp", FoodCategoryID = 2, Calories = 28 },
+                    new Food { FoodID = 36, Name = "Hamburger", FoodCategoryID = 3, Calories = 254 },
+                    new Food { FoodID = 37, Name = "Double Cheeseburger", FoodCategoryID = 3, Calories = 267 },
+                    new Food { FoodID = 38, Name = "Burger King Whopper", FoodCategoryID = 3, Calories = 231 },
+                    new Food { FoodID = 39, Name = "McDonalds Cheeseburger", FoodCategoryID = 3, Calories = 263 },
+                    new Food { FoodID = 40, Name = "Tavuk Nugget", FoodCategoryID = 3, Calories = 296 },
+                    new Food { FoodID = 41, Name = "Fish and Chips", FoodCategoryID = 3, Calories = 195 },
+                    new Food { FoodID = 42, Name = "Patates Kızartması", FoodCategoryID = 3, Calories = 254 },
+                    new Food { FoodID = 43, Name = "McDonalds Big Mac", FoodCategoryID = 3, Calories = 256 },
+                    new Food { FoodID = 44, Name = "Cheddar", FoodCategoryID = 4, Calories = 403 },
+                    new Food { FoodID = 45, Name = "Mozzarella", FoodCategoryID = 4, Calories = 280 },
+                    new Food { FoodID = 46, Name = "Kaşar Peyniri", FoodCategoryID = 4, Calories = 337 },
+                    new Food { FoodID = 47, Name = "Eski Kaşar Peyniri", FoodCategoryID = 4, Calories = 435 },
+                    new Food { FoodID = 48, Name = "Tulum Peyniri", FoodCategoryID = 4, Calories = 363 },
+                    new Food { FoodID = 49, Name = "Krem Peynir", FoodCategoryID = 4, Calories = 342 },
+                    new Food { FoodID = 50, Name = "Keçi Peyniri", FoodCategoryID = 4, Calories = 364 },
+                    new Food { FoodID = 51, Name = "Koyun Peyniri", FoodCategoryID = 4, Calories = 364 },
+                    new Food { FoodID = 52, Name = "Cottage Peyniri", FoodCategoryID = 4, Calories = 98 },
+                    new Food { FoodID = 53, Name = "Biftek", FoodCategoryID = 5, Calories = 242 },
+                    new Food { FoodID = 54, Name = "Antrikot", FoodCategoryID = 5, Calories = 121 },
+                    new Food { FoodID = 55, Name = "Bonfile", FoodCategoryID = 5, Calories = 138 },
+                    new Food { FoodID = 56, Name = "Hindi", FoodCategoryID = 5, Calories = 189 },
+                    new Food { FoodID = 57, Name = "Tavuk", FoodCategoryID = 5, Calories = 219 },
+                    new Food { FoodID = 58, Name = "Kuzu Pirzola", FoodCategoryID = 5, Calories = 276 },
+                    new Food { FoodID = 59, Name = "Domuz Eti", FoodCategoryID = 5, Calories = 196 },
+                    new Food { FoodID = 60, Name = "Şinitzel", FoodCategoryID = 5, Calories = 156 },
+                    new Food { FoodID = 61, Name = "Dana Kıyma", FoodCategoryID = 5, Calories = 246 },
+                    new Food { FoodID = 62, Name = "Sosis", FoodCategoryID = 5, Calories = 230 },
+                    new Food { FoodID = 63, Name = "Sucuk", FoodCategoryID = 5, Calories = 332 },
+                    new Food { FoodID = 64, Name = "Salam", FoodCategoryID = 5, Calories = 336 },
+                    new Food { FoodID = 65, Name = "Kek", FoodCategoryID = 6, Calories = 252 },
+                    new Food { FoodID = 66, Name = "Donut", FoodCategoryID = 6, Calories = 403 },
+                    new Food { FoodID = 67, Name = "Tiramisu", FoodCategoryID = 6, Calories = 283 },
+                    new Food { FoodID = 68, Name = "Waffle", FoodCategoryID = 6, Calories = 312 },
+                    new Food { FoodID = 69, Name = "Profiterol", FoodCategoryID = 6, Calories = 334 },
+                    new Food { FoodID = 70, Name = "Sütlaç", FoodCategoryID = 6, Calories = 134 },
+                    new Food { FoodID = 71, Name = "Baklava", FoodCategoryID = 6, Calories = 402 },
+                    new Food { FoodID = 72, Name = "Muhallebi", FoodCategoryID = 6, Calories = 378 },
+                    new Food { FoodID = 73, Name = "Puding", FoodCategoryID = 6, Calories = 251 },
+                    new Food { FoodID = 74, Name = "Kola", FoodCategoryID = 7, Calories = 42 },
+                    new Food { FoodID = 75, Name = "Fanta", FoodCategoryID = 7, Calories = 35 },
+                    new Food { FoodID = 76, Name = "Sprite", FoodCategoryID = 7, Calories = 42 },
+                    new Food { FoodID = 77, Name = "Ayran", FoodCategoryID = 7, Calories = 35 },
+                    new Food { FoodID = 78, Name = "Çay", FoodCategoryID = 7, Calories = 1 },
+                    new Food { FoodID = 79, Name = "Kahve", FoodCategoryID = 7, Calories = 2 },
+                    new Food { FoodID = 80, Name = "IceTea", FoodCategoryID = 7, Calories = 36 },
+                    new Food { FoodID = 81, Name = "Arpa Şehriye", FoodCategoryID = 8, Calories = 357 },
+                    new Food { FoodID = 82, Name = "Noodle", FoodCategoryID = 8, Calories = 370 },
+                    new Food { FoodID = 83, Name = "Erişte", FoodCategoryID = 8, Calories = 260 },
+                    new Food { FoodID = 84, Name = "Makarna", FoodCategoryID = 8, Calories = 370 },
+                    new Food { FoodID = 85, Name = "Mantı", FoodCategoryID = 8, Calories = 200 },
+                    new Food { FoodID = 86, Name = "Yulaf Ezmesi", FoodCategoryID = 8, Calories = 375 },
+                    new Food { FoodID = 87, Name = "Müsli", FoodCategoryID = 8, Calories = 336 },
+                    new Food { FoodID = 88, Name = "Mısır Gevreği", FoodCategoryID = 8, Calories = 357 },
+                    new Food { FoodID = 89, Name = "Buğday Ezmesi", FoodCategoryID = 8, Calories = 364 },
+                    new Food { FoodID = 90, Name = "Kuskus", FoodCategoryID = 8, Calories = 376 },
+                    new Food { FoodID = 91, Name = "Bakla", FoodCategoryID = 9, Calories = 84 },
+                    new Food { FoodID = 92, Name = "Barbunya", FoodCategoryID = 9, Calories = 127 },
+                    new Food { FoodID = 93, Name = "Nohut", FoodCategoryID = 9, Calories = 164 },
+                    new Food { FoodID = 94, Name = "Kuru Fasulye", FoodCategoryID = 9, Calories = 341 },
+                    new Food { FoodID = 95, Name = "Mercimek", FoodCategoryID = 9, Calories = 353 },
+                    new Food { FoodID = 96, Name = "Yeşil Fasulye", FoodCategoryID = 9, Calories = 31 },
+                    new Food { FoodID = 97, Name = "Börülce", FoodCategoryID = 9, Calories = 135 },
+                    new Food { FoodID = 98, Name = "Zeytinyağı", FoodCategoryID = 10, Calories = 884 },
+                    new Food { FoodID = 99, Name = "Ayçiçekyağı", FoodCategoryID = 10, Calories = 884 },
+                    new Food { FoodID = 100, Name = "Kanola Yağı", FoodCategoryID = 10, Calories = 884 },
+                    new Food { FoodID = 101, Name = "Tereyağı", FoodCategoryID = 10, Calories = 876 },
+                    new Food { FoodID = 102, Name = "Margarin", FoodCategoryID = 10, Calories = 717 },
+                    new Food { FoodID = 103, Name = "PalmYağı", FoodCategoryID = 10, Calories = 884 },
+                    new Food { FoodID = 104, Name = "SusamYağı", FoodCategoryID = 10, Calories = 884 },
+                    new Food { FoodID = 105, Name = "Süt Tozu", FoodCategoryID = 11, Calories = 496 },
+                    new Food { FoodID = 106, Name = "Cacık", FoodCategoryID = 11, Calories = 112 },
+                    new Food { FoodID = 107, Name = "Kefir", FoodCategoryID = 11, Calories = 51 },
+                    new Food { FoodID = 108, Name = "Krema", FoodCategoryID = 11, Calories = 345 },
+                    new Food { FoodID = 109, Name = "Sıcak Çikolata", FoodCategoryID = 11, Calories = 90 },
+                    new Food { FoodID = 110, Name = "Badem Sütü", FoodCategoryID = 11, Calories = 13 },
+                    new Food { FoodID = 111, Name = "Tam Yağlı Süt", FoodCategoryID = 11, Calories = 61 },
+                    new Food { FoodID = 112, Name = "Az Yağlı Süt", FoodCategoryID = 11, Calories = 50 },
+                    new Food { FoodID = 113, Name = "Yarım Yağlı Süt", FoodCategoryID = 11, Calories = 42 },
+                    new Food { FoodID = 114, Name = "Beyaz Ekmek", FoodCategoryID = 12, Calories = 266 },
+                    new Food { FoodID = 115, Name = "Çavdarlı Ekmek", FoodCategoryID = 12, Calories = 220 },
+                    new Food { FoodID = 116, Name = "Tam Tahıllı Ekmek", FoodCategoryID = 12, Calories = 247 },
+                    new Food { FoodID = 117, Name = "Kruvasan", FoodCategoryID = 12, Calories = 406 },
+                    new Food { FoodID = 118, Name = "Su Böreği", FoodCategoryID = 12, Calories = 208 },
+                    new Food { FoodID = 119, Name = "Tost", FoodCategoryID = 12, Calories = 193 },
+                    new Food { FoodID = 120, Name = "Poğaça", FoodCategoryID = 12, Calories = 224 }
+                );
+        }
+    }
+}
