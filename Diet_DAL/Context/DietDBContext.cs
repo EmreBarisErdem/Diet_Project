@@ -22,7 +22,7 @@ namespace CalorieProject_DAL.Context
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer("Data Source=MYDRAGON\\MSSQLSERVER1;Initial Catalog=CalorieDB;Integrated Security=True;Trust Server Certificate=True");
+            optionsBuilder.UseSqlServer("Data Source=MYDRAGON\\MSSQLSERVER1;Initial Catalog=DietProjectDB;Integrated Security=True;Trust Server Certificate=True");
 
             
         }

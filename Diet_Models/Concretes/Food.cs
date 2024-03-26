@@ -30,23 +30,13 @@ namespace Diet_Models.Concretes
 
 
 
-        [NotMapped]
-        public int CalculatedCalories { get; set; }
-
-        [NotMapped]
-        public int CalculatedQuantity { get; set; }
-
-        [NotMapped]
-        public Portion CalculatedPortion { get; set; }
-
-
-
 
         public int FoodCategoryID { get; set; }
 
         public virtual FoodCategory? FoodCategory { get; set; }
 
         public Menu? Menu { get; set; }
+
 
     }
 }

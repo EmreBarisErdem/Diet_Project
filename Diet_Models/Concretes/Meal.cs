@@ -12,14 +12,12 @@ namespace CalorieProject_Models.Concretes
     {
         public int MealID { get; set; }
 
-        public DateTime MealDate { get; set; }
-
         public string MealName { get; set; }
 
        
 
 
-        public Menu? Menu { get; set; }
+        public ICollection<Menu>? Menu { get; set; }
 
 
 

@@ -16,5 +16,17 @@ namespace Diet_PL
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LogInScreen loginScreen = new LogInScreen();
+
+            this.Hide();
+
+            loginScreen.ShowDialog();
+
+            this.Show();
+        }
+
     }
 }

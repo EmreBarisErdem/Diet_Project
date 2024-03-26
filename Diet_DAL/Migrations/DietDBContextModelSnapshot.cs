@@ -109,23 +109,11 @@ namespace Diet_DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MealID"));
 
-                    b.Property<DateTime>("MealDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("MealName")
                         .IsRequired()
                         .HasColumnType("varchar(30)");
 
-                    b.Property<int?>("MenuID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TotalCaloriesByMeal")
-                        .HasMaxLength(5000)
-                        .HasColumnType("integer");
-
                     b.HasKey("MealID");
-
-                    b.HasIndex("MenuID");
 
                     b.ToTable("Meals");
 
@@ -133,19 +121,16 @@ namespace Diet_DAL.Migrations
                         new
                         {
                             MealID = 1,
-                            MealDate = new DateTime(2024, 3, 26, 18, 1, 44, 214, DateTimeKind.Local).AddTicks(4027),
                             MealName = "Breakfast"
                         },
                         new
                         {
                             MealID = 2,
-                            MealDate = new DateTime(2024, 3, 26, 18, 1, 44, 214, DateTimeKind.Local).AddTicks(4054),
                             MealName = "Lunch"
                         },
                         new
                         {
                             MealID = 3,
-                            MealDate = new DateTime(2024, 3, 26, 18, 1, 44, 214, DateTimeKind.Local).AddTicks(4058),
                             MealName = "Dinner"
                         });
                 });
@@ -1509,8 +1494,8 @@ namespace Diet_DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuID"));
 
-                    b.Property<int>("FoodID")
-                        .HasColumnType("int");
+                    b.Property<DateTime?>("MealDate")
+                        .HasColumnType("datetime");
 
                     b.Property<int>("MealID")
                         .HasColumnType("int");
@@ -1518,20 +1503,17 @@ namespace Diet_DAL.Migrations
                     b.Property<int>("PersonID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("TotalCaloriesByMeal")
+                        .HasMaxLength(5000)
+                        .HasColumnType("integer");
+
                     b.HasKey("MenuID");
+
+                    b.HasIndex("MealID");
 
                     b.HasIndex("PersonID");
 
                     b.ToTable("Menus");
-                });
-
-            modelBuilder.Entity("CalorieProject_Models.Concretes.Meal", b =>
-                {
-                    b.HasOne("Diet_Models.Concretes.Menu", "Menu")
-                        .WithMany("Meals")
-                        .HasForeignKey("MenuID");
-
-                    b.Navigation("Menu");
                 });
 
             modelBuilder.Entity("Diet_Models.Concretes.Food", b =>
@@ -1553,11 +1535,19 @@ namespace Diet_DAL.Migrations
 
             modelBuilder.Entity("Diet_Models.Concretes.Menu", b =>
                 {
+                    b.HasOne("CalorieProject_Models.Concretes.Meal", "Meal")
+                        .WithMany("Menu")
+                        .HasForeignKey("MealID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("CalorieProject_Models.Concretes.Person", "Person")
                         .WithMany("Menus")
                         .HasForeignKey("PersonID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Meal");
 
                     b.Navigation("Person");
                 });
@@ -1565,6 +1555,11 @@ namespace Diet_DAL.Migrations
             modelBuilder.Entity("CalorieProject_Models.Concretes.FoodCategory", b =>
                 {
                     b.Navigation("Foods");
+                });
+
+            modelBuilder.Entity("CalorieProject_Models.Concretes.Meal", b =>
+                {
+                    b.Navigation("Menu");
                 });
 
             modelBuilder.Entity("CalorieProject_Models.Concretes.Person", b =>
@@ -1575,8 +1570,6 @@ namespace Diet_DAL.Migrations
             modelBuilder.Entity("Diet_Models.Concretes.Menu", b =>
                 {
                     b.Navigation("Foods");
-
-                    b.Navigation("Meals");
                 });
 #pragma warning restore 612, 618
         }

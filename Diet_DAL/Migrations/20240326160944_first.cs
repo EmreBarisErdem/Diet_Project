@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Diet_DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstDB : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,6 +24,19 @@ namespace Diet_DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FoodCategories", x => x.FoodCategoryID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Meals",
+                columns: table => new
+                {
+                    MealID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MealName = table.Column<string>(type: "varchar(30)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Meals", x => x.MealID);
                 });
 
             migrationBuilder.CreateTable(
@@ -58,11 +71,18 @@ namespace Diet_DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PersonID = table.Column<int>(type: "int", nullable: false),
                     MealID = table.Column<int>(type: "int", nullable: false),
-                    FoodID = table.Column<int>(type: "int", nullable: false)
+                    TotalCaloriesByMeal = table.Column<int>(type: "integer", maxLength: 5000, nullable: true),
+                    MealDate = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Menus", x => x.MenuID);
+                    table.ForeignKey(
+                        name: "FK_Menus_Meals_MealID",
+                        column: x => x.MealID,
+                        principalTable: "Meals",
+                        principalColumn: "MealID",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Menus_People_PersonID",
                         column: x => x.PersonID,
@@ -102,27 +122,6 @@ namespace Diet_DAL.Migrations
                         principalColumn: "MenuID");
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Meals",
-                columns: table => new
-                {
-                    MealID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MealDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MealName = table.Column<string>(type: "varchar(30)", nullable: false),
-                    TotalCaloriesByMeal = table.Column<int>(type: "integer", maxLength: 5000, nullable: true),
-                    MenuID = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Meals", x => x.MealID);
-                    table.ForeignKey(
-                        name: "FK_Meals_Menus_MenuID",
-                        column: x => x.MenuID,
-                        principalTable: "Menus",
-                        principalColumn: "MenuID");
-                });
-
             migrationBuilder.InsertData(
                 table: "FoodCategories",
                 columns: new[] { "FoodCategoryID", "FoodCategoryName" },
@@ -144,12 +143,12 @@ namespace Diet_DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Meals",
-                columns: new[] { "MealID", "MealDate", "MealName", "MenuID", "TotalCaloriesByMeal" },
+                columns: new[] { "MealID", "MealName" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 3, 26, 18, 1, 44, 214, DateTimeKind.Local).AddTicks(4027), "Breakfast", null, null },
-                    { 2, new DateTime(2024, 3, 26, 18, 1, 44, 214, DateTimeKind.Local).AddTicks(4054), "Lunch", null, null },
-                    { 3, new DateTime(2024, 3, 26, 18, 1, 44, 214, DateTimeKind.Local).AddTicks(4058), "Dinner", null, null }
+                    { 1, "Breakfast" },
+                    { 2, "Lunch" },
+                    { 3, "Dinner" }
                 });
 
             migrationBuilder.InsertData(
@@ -300,9 +299,9 @@ namespace Diet_DAL.Migrations
                 column: "MenuID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Meals_MenuID",
-                table: "Meals",
-                column: "MenuID");
+                name: "IX_Menus_MealID",
+                table: "Menus",
+                column: "MealID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Menus_PersonID",
@@ -317,13 +316,13 @@ namespace Diet_DAL.Migrations
                 name: "Foods");
 
             migrationBuilder.DropTable(
-                name: "Meals");
-
-            migrationBuilder.DropTable(
                 name: "FoodCategories");
 
             migrationBuilder.DropTable(
                 name: "Menus");
+
+            migrationBuilder.DropTable(
+                name: "Meals");
 
             migrationBuilder.DropTable(
                 name: "People");

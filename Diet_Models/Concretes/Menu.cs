@@ -12,14 +12,18 @@ namespace Diet_Models.Concretes
     {
         public int MenuID { get; set; }
 
+
+
         public int PersonID { get; set; }
 
         public int MealID { get; set; }
 
-        public int FoodID { get; set; }
+
 
 
         public int? TotalCaloriesByMeal { get; set; }
+
+        public DateTime MealDate { get; set; } = DateTime.Now;
 
 
 
@@ -28,7 +32,7 @@ namespace Diet_Models.Concretes
 
         public Person? Person { get; set; }
 
-        public ICollection<Meal>? Meals { get; set; }
+        public Meal? Meal { get; set; }
 
 
     }

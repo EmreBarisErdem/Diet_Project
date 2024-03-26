@@ -1,6 +1,7 @@
 ﻿using CalorieProject_DAL.Context;
 using CalorieProject_DAL.Repositories.Concrete;
 using CalorieProject_Models.Concretes;
+using CalorieProject_Models.Enums;
 using Diet_Models.Concretes;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,15 @@ namespace CalorieProject_BLL.Services
         }
         FoodManager foodManager;
 
+        public bool CheckIsCalorieValid(int calorie) // Caliore is per 100g
+        {
+            if (calorie > 1000)
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         public List<Food> GetFoodWithWords(string word)
         {
@@ -56,9 +66,11 @@ namespace CalorieProject_BLL.Services
                 return false;
             }
 
+        }
 
-
-
+        public bool Delete(Food food)
+        {
+            return foodManager.Delete(food);
         }
 
 

@@ -433,7 +433,7 @@
             Controls.Add(label1);
             Name = "OgundenYemekSec";
             Text = "Confirm";
-            Load += this.OgundenYemekSec_Load;
+            //Load += this.OgundenYemekSec_Load;
             ((System.ComponentModel.ISupportInitialize)nud_Quantity).EndInit();
             ResumeLayout(false);
             PerformLayout();

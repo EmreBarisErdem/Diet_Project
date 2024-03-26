@@ -14,11 +14,11 @@ namespace CalorieProject_DAL.Configurations
         public void Configure(EntityTypeBuilder<Meal> builder)
         {
             builder.Property(x => x.MealName).HasColumnType("varchar(30)");
-            builder.Property(x => x.TotalCaloriesByMeal).HasColumnType("integer").HasMaxLength(5000);
+            
 
-            builder.HasData(new Meal { MealID = 1, MealDate = DateTime.Now, MealName = "Breakfast" });
-            builder.HasData(new Meal { MealID = 2, MealDate = DateTime.Now, MealName = "Lunch" });
-            builder.HasData(new Meal { MealID = 3, MealDate = DateTime.Now, MealName = "Dinner" });
+            builder.HasData(new Meal { MealID = 1, MealName = "Breakfast" });
+            builder.HasData(new Meal { MealID = 2, MealName = "Lunch" });
+            builder.HasData(new Meal { MealID = 3, MealName = "Dinner" });
 
         }
     }

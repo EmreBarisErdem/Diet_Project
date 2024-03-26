@@ -16,5 +16,17 @@ namespace Diet_PL
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reklam reklam = new Reklam();
+
+            this.Hide();
+
+            reklam.ShowDialog();
+
+            this.Show();
+        }
+
     }
 }
