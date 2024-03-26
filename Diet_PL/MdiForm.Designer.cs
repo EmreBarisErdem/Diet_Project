@@ -50,18 +50,21 @@
             addFoodToSystemToolStripMenuItem.Name = "addFoodToSystemToolStripMenuItem";
             addFoodToSystemToolStripMenuItem.Size = new Size(196, 29);
             addFoodToSystemToolStripMenuItem.Text = "Add Food To System";
+            addFoodToSystemToolStripMenuItem.Click += addFoodToSystemToolStripMenuItem_Click_1;
             // 
             // chooseMealToolStripMenuItem
             // 
             chooseMealToolStripMenuItem.Name = "chooseMealToolStripMenuItem";
             chooseMealToolStripMenuItem.Size = new Size(138, 29);
             chooseMealToolStripMenuItem.Text = "Choose Meal";
+            chooseMealToolStripMenuItem.Click += chooseMealToolStripMenuItem_Click_1;
             // 
             // myMealHistoryToolStripMenuItem
             // 
             myMealHistoryToolStripMenuItem.Name = "myMealHistoryToolStripMenuItem";
             myMealHistoryToolStripMenuItem.Size = new Size(165, 29);
             myMealHistoryToolStripMenuItem.Text = "My Meal History";
+            myMealHistoryToolStripMenuItem.Click += myMealHistoryToolStripMenuItem_Click_1;
             // 
             // MdiForm
             // 
@@ -73,6 +76,7 @@
             MainMenuStrip = menuStrip1;
             Name = "MdiForm";
             Text = "MdiForm";
+            Load += MdiForm_Load_1;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

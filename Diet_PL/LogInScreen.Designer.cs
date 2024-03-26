@@ -70,6 +70,7 @@
             btn_SignUp.TabIndex = 6;
             btn_SignUp.Text = "Sign Up";
             btn_SignUp.UseVisualStyleBackColor = false;
+            btn_SignUp.Click += btn_SignUp_Click_1;
             // 
             // label1
             // 
@@ -91,6 +92,7 @@
             btn_Login.TabIndex = 4;
             btn_Login.Text = "Login";
             btn_Login.UseVisualStyleBackColor = true;
+            btn_Login.Click += btn_Login_Click_1;
             // 
             // txt_Password
             // 

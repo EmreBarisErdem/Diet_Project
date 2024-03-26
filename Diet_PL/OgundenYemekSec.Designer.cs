@@ -116,6 +116,7 @@
             btn_Transfer_Dinner.TabIndex = 64;
             btn_Transfer_Dinner.Text = "Confirm";
             btn_Transfer_Dinner.UseVisualStyleBackColor = false;
+            btn_Transfer_Dinner.Click += btn_Transfer_Dinner_Click_1;
             // 
             // btn_Remove_Dinner
             // 
@@ -163,6 +164,7 @@
             btn_Transfer_Lunch.TabIndex = 60;
             btn_Transfer_Lunch.Text = "Confirm";
             btn_Transfer_Lunch.UseVisualStyleBackColor = false;
+            btn_Transfer_Lunch.Click += btn_Transfer_Lunch_Click_1;
             // 
             // btn_Remove_Lunch
             // 
@@ -175,6 +177,7 @@
             btn_Remove_Lunch.TabIndex = 59;
             btn_Remove_Lunch.Text = "Remove Food From Lunch";
             btn_Remove_Lunch.UseVisualStyleBackColor = false;
+            btn_Remove_Lunch.Click += btn_Remove_Lunch_Click_1;
             // 
             // lbl_Dinner_Calories
             // 
@@ -275,6 +278,7 @@
             btn_Transfer_Breakfast.TabIndex = 57;
             btn_Transfer_Breakfast.Text = "Confirm";
             btn_Transfer_Breakfast.UseVisualStyleBackColor = false;
+            btn_Transfer_Breakfast.Click += btn_Transfer_Breakfast_Click_1;
             // 
             // btn_Remove_Breakfast
             // 
@@ -287,6 +291,7 @@
             btn_Remove_Breakfast.TabIndex = 56;
             btn_Remove_Breakfast.Text = "Remove Food From Breakfast";
             btn_Remove_Breakfast.UseVisualStyleBackColor = false;
+            btn_Remove_Breakfast.Click += btn_Remove_Breakfast_Click_1;
             // 
             // lbl_Breakfast_Calories
             // 
@@ -340,6 +345,7 @@
             txt_SearchFood.Name = "txt_SearchFood";
             txt_SearchFood.Size = new Size(238, 33);
             txt_SearchFood.TabIndex = 52;
+            txt_SearchFood.TextChanged += txt_SearchFood_TextChanged_1;
             // 
             // btn_AddFood
             // 
@@ -352,6 +358,7 @@
             btn_AddFood.TabIndex = 54;
             btn_AddFood.Text = "Add  Food";
             btn_AddFood.UseVisualStyleBackColor = false;
+            btn_AddFood.Click += btn_AddFood_Click_1;
             // 
             // lbox_Foods
             // 
@@ -363,6 +370,7 @@
             lbox_Foods.Name = "lbox_Foods";
             lbox_Foods.Size = new Size(368, 379);
             lbox_Foods.TabIndex = 53;
+            lbox_Foods.SelectedIndexChanged += lbox_Foods_SelectedIndexChanged_1;
             // 
             // cmb_Portion
             // 
@@ -433,7 +441,7 @@
             Controls.Add(label1);
             Name = "OgundenYemekSec";
             Text = "Confirm";
-            //Load += this.OgundenYemekSec_Load;
+            Load += OgundenYemekSec_Load_1;
             ((System.ComponentModel.ISupportInitialize)nud_Quantity).EndInit();
             ResumeLayout(false);
             PerformLayout();

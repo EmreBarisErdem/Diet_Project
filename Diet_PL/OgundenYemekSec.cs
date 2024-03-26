@@ -35,40 +35,86 @@ namespace Diet_PL
 
         int personID;
 
-        private void OgundenYemekSec_Load(object sender, EventArgs e)
+
+        private void BreakFastCaloriesCalculator(out int totalCalories)
         {
-            cmb_ChooseMeal.DataSource = mealServices.GetMeals();
-            cmb_ChooseMeal.DisplayMember = "MealName";
-            cmb_ChooseMeal.ValueMember = "MealID";
-
-            lbox_Foods.DataSource = foodServices.GetAll();
-            lbox_Foods.DisplayMember = "Name";
-            lbox_Foods.ValueMember = "FoodID";
-
-            cmb_Portion.DataSource = Enum.GetValues<Portion>().ToList();
+            totalCalories = 0;
 
 
+            foreach (Food food in lbox_Breakfast.Items)
+            {
+
+                totalCalories = food.Quantity * food.Calories;
+
+                if (food.Portion is Portion.Double)
+                {
+                    totalCalories = 2;
+                }
+                else if (food.Portion is Portion.Standart)
+                {
+                    totalCalories = 1;
+                }
+                else
+                {
+                    totalCalories /= 2;
+                }
+
+                bool control = foodServices.AddOrUpdate(food);
+
+            }
+
+            lbl_Breakfast_Calories.Text = $"{totalCalories} Calories";
         }
 
-        private void txt_SearchFood_TextChanged(object sender, EventArgs e)
+        private void LunchCaloriesCalculator(out int totalCalories)
         {
+            totalCalories = 0;
 
-            lbox_Foods.DataSource = foodServices.GetFoodWithWords(txt_SearchFood.Text);
+            int quantity = (int)nud_Quantity.Value;
 
+            Portion portion = (Portion)cmb_Portion.SelectedItem;
+
+            foreach (Food food in lbox_Lunch.Items)
+            {
+                Food newFood = foodServices.GetByID(food.FoodID);
+
+                // totalCalories += food.CalculatedCalories;  // algoritma lazım
+
+                bool control = foodServices.AddOrUpdate(newFood);
+            }
+
+
+            lbl_Lunch_Calories.Text = $"{totalCalories} Calories";
         }
 
-        private void lbox_Foods_SelectedIndexChanged(object sender, EventArgs e)
+        private void DinnerCaloriesCalculator(out int totalCalories)
         {
-            Food food = (lbox_Foods.SelectedItem as Food);
+            totalCalories = 0;
 
-            lbl_SelectedFood_Calories.Text = $"{food.Calories} Calories";
+            int quantity = (int)nud_Quantity.Value;
 
-            nud_Quantity.Value = food.Quantity;
+            Portion portion = (Portion)cmb_Portion.SelectedItem;
 
-            cmb_Portion.SelectedItem = food.Portion;
+            foreach (Food food in lbox_Dinner.Items)
+            {
+                Food newFood = foodServices.GetByID(food.FoodID);
+
+                //totalCalories += food.CalculatedCalories;  // algoritma lazım
+
+                bool control = foodServices.AddOrUpdate(newFood);
+            }
+
+
+            lbl_Dinner_Calories.Text = $"{totalCalories} Calories";
         }
 
-        private void btn_AddFood_Click(object sender, EventArgs e)
+
+
+
+
+
+
+        private void btn_AddFood_Click_1(object sender, EventArgs e)
         {
             if (lbox_Foods.SelectedIndex != -1)
             {
@@ -104,16 +150,21 @@ namespace Diet_PL
             {
                 MessageBox.Show("Please Select Any Food From The Food List", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
         }
 
-
-
-        private void btn_Remove_Breakfast_Click(object sender, EventArgs e)
+        private void lbox_Foods_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            Food food = (lbox_Foods.SelectedItem as Food);
 
+            lbl_SelectedFood_Calories.Text = $"{food.Calories} Calories";
 
+            nud_Quantity.Value = food.Quantity;
+
+            cmb_Portion.SelectedItem = food.Portion;
+        }
+
+        private void btn_Remove_Breakfast_Click_1(object sender, EventArgs e)
+        {
             if (lbox_Breakfast.Items.Count > 0 && lbox_Breakfast.SelectedIndex != -1)
             {
                 lbox_Breakfast.Items.RemoveAt(lbox_Breakfast.SelectedIndex);
@@ -124,12 +175,9 @@ namespace Diet_PL
             {
                 MessageBox.Show("There is no food to be removed from the Breakfast Meal", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
-
         }
 
-        private void btn_Remove_Lunch_Click(object sender, EventArgs e)
+        private void btn_Remove_Lunch_Click_1(object sender, EventArgs e)
         {
             if (lbox_Lunch.Items.Count > 0 && lbox_Lunch.SelectedIndex != -1)
             {
@@ -155,88 +203,9 @@ namespace Diet_PL
             {
                 MessageBox.Show("There is no food to be removed from the Dinner Meal", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
-
-
-
-
-        private void BreakFastCaloriesCalculator(out int totalCalories)
-        {
-            totalCalories = 0;
-         
-
-            foreach (Food food in lbox_Breakfast.Items)
-            {
-
-                totalCalories = food.Quantity * food.Calories;
-
-                if(food.Portion is Portion.Double)
-                {
-                    totalCalories *= 2;
-                }
-                else if(food.Portion is Portion.Standart)
-                {
-                    totalCalories *= 1;
-                }
-                else
-                {
-                    totalCalories /= 2;
-                }
-
-                bool control = foodServices.AddOrUpdate(food);
-
-            }
-
-            lbl_Breakfast_Calories.Text = $"{totalCalories} Calories";
-        }
-
-        private void LunchCaloriesCalculator(out int totalCalories)
-        {
-            totalCalories = 0;
-
-            int quantity = (int)nud_Quantity.Value;
-
-            Portion portion = (Portion)cmb_Portion.SelectedItem;
-
-            foreach (Food food in lbox_Lunch.Items)
-            {
-                Food newFood = foodServices.GetByID(food.FoodID);
-
-               // totalCalories += food.CalculatedCalories;  // algoritma lazım
-
-                bool control = foodServices.AddOrUpdate(newFood);
-            }
-
-
-            lbl_Lunch_Calories.Text = $"{totalCalories} Calories";
-        }
-
-        private void DinnerCaloriesCalculator(out int totalCalories)
-        {
-            totalCalories = 0;
-
-            int quantity = (int)nud_Quantity.Value;
-
-            Portion portion = (Portion)cmb_Portion.SelectedItem;
-
-            foreach (Food food in lbox_Dinner.Items)
-            {
-                Food newFood = foodServices.GetByID(food.FoodID);
-
-                //totalCalories += food.CalculatedCalories;  // algoritma lazım
-
-                bool control = foodServices.AddOrUpdate(newFood);
-            }
-
-
-            lbl_Dinner_Calories.Text = $"{totalCalories} Calories";
-        }
-
-
-
-        private void btn_Transfer_Breakfast_Click(object sender, EventArgs e)
+        private void btn_Transfer_Breakfast_Click_1(object sender, EventArgs e)
         {
             Menu menu = new Menu();
 
@@ -246,7 +215,7 @@ namespace Diet_PL
 
             menu.TotalCaloriesByMeal = calories;
             menu.MealID = meal.MealID;
-            
+
             Person person = personServices.GetPersonByID(personID);
             menu.PersonID = person.PersonID;
 
@@ -260,7 +229,7 @@ namespace Diet_PL
 
             menu.Foods = foods;
             bool control = menuServices.AddOrUpdate(menu);
-            
+
 
             if (control)
             {
@@ -275,13 +244,9 @@ namespace Diet_PL
 
             lbox_Breakfast.Items.Clear();
             lbl_Breakfast_Calories.Text = "... Calories";
-
-
-
         }
 
-
-        private void btn_Transfer_Lunch_Click(object sender, EventArgs e)
+        private void btn_Transfer_Lunch_Click_1(object sender, EventArgs e)
         {
             Menu menu = new Menu();
 
@@ -320,10 +285,9 @@ namespace Diet_PL
 
             lbox_Breakfast.Items.Clear();
             lbl_Breakfast_Calories.Text = "... Calories";
-
         }
 
-        private void btn_Transfer_Dinner_Click(object sender, EventArgs e)
+        private void btn_Transfer_Dinner_Click_1(object sender, EventArgs e)
         {
             Menu menu = new Menu();
 
@@ -362,9 +326,24 @@ namespace Diet_PL
 
             lbox_Breakfast.Items.Clear();
             lbl_Breakfast_Calories.Text = "... Calories";
-
         }
 
+        private void OgundenYemekSec_Load_1(object sender, EventArgs e)
+        {
+            cmb_ChooseMeal.DataSource = mealServices.GetMeals();
+            cmb_ChooseMeal.DisplayMember = "MealName";
+            cmb_ChooseMeal.ValueMember = "MealID";
 
+            lbox_Foods.DataSource = foodServices.GetAll();
+            lbox_Foods.DisplayMember = "Name";
+            lbox_Foods.ValueMember = "FoodID";
+
+            cmb_Portion.DataSource = Enum.GetValues<Portion>().ToList();
+        }
+
+        private void txt_SearchFood_TextChanged_1(object sender, EventArgs e)
+        {
+            lbox_Foods.DataSource = foodServices.GetFoodWithWords(txt_SearchFood.Text);
+        }
     }
 }

@@ -48,6 +48,7 @@
             button1.TabIndex = 9;
             button1.Text = "Click For Healthy Days\r\n";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // pictureBox2
             // 

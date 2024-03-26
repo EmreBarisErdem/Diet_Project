@@ -67,6 +67,7 @@
             btnDailyData.TabIndex = 49;
             btnDailyData.Text = "Get Daily Data";
             btnDailyData.UseVisualStyleBackColor = true;
+            //btnDailyData.Click += btnDailyData_Click_1;
             // 
             // lvi_Food
             // 

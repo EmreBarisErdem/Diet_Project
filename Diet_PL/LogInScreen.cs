@@ -22,7 +22,18 @@ namespace Diet_PL
         }
         PersonServices personServices;
 
-        private void btn_Login_Click(object sender, EventArgs e)
+        private void btn_SignUp_Click_1(object sender, EventArgs e)
+        {
+            LogOnScreen logOnScreen = new LogOnScreen();
+
+            this.Hide();
+
+            logOnScreen.ShowDialog();
+
+            this.Show();
+        }
+
+        private void btn_Login_Click_1(object sender, EventArgs e)
         {
             string username = txt_UserName.Text.Trim();
 
@@ -92,22 +103,6 @@ namespace Diet_PL
                 }
 
             }
-
         }
-
-        private void btn_SignUp_Click(object sender, EventArgs e)
-        {
-
-            LogOnScreen logOnScreen = new LogOnScreen();
-
-            this.Hide();
-
-            logOnScreen.ShowDialog();
-
-            this.Show();
-        }
-
-
-
     }
 }

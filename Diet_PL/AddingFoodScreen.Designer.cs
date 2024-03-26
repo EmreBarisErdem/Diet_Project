@@ -51,6 +51,7 @@
             btn_AddImage.TabIndex = 33;
             btn_AddImage.Text = "Choose Image (Optional)";
             btn_AddImage.UseVisualStyleBackColor = true;
+            btn_AddImage.Click += btn_AddImage_Click_1;
             // 
             // btn_AddFoodDetails
             // 
@@ -63,6 +64,7 @@
             btn_AddFoodDetails.TabIndex = 32;
             btn_AddFoodDetails.Text = "Add Food";
             btn_AddFoodDetails.UseVisualStyleBackColor = false;
+            btn_AddFoodDetails.Click += btn_AddFoodDetails_Click_1;
             // 
             // pboxImage
             // 
@@ -159,6 +161,7 @@
             Controls.Add(label1);
             Name = "AddingFoodScreen";
             Text = "AddingFoodScreen";
+            Load += AddingFoodScreen_Load_1;
             ((System.ComponentModel.ISupportInitialize)pboxImage).EndInit();
             ResumeLayout(false);
             PerformLayout();

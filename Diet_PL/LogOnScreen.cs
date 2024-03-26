@@ -22,15 +22,14 @@ namespace Diet_PL
         }
         PersonServices personServices;
 
-        private void KayitEkrani_Load(object sender, EventArgs e)
+        private void LogOnScreen_Load(object sender, EventArgs e)
         {
             cmb_ActvityStatus.DataSource = Enum.GetValues<ActivityStatus>();
 
             cmb_Gender.DataSource = Enum.GetValues<Gender>();
-
         }
 
-        private void btn_SignUp_Click(object sender, EventArgs e)
+        private void btn_SignUp_Click_1(object sender, EventArgs e)
         {
             Person person = new Person();
 
@@ -63,10 +62,7 @@ namespace Diet_PL
             }
 
 
-
-
         }
-
 
     }
 }
