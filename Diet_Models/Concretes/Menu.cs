@@ -21,7 +21,7 @@ namespace Diet_Models.Concretes
 
 
 
-        public int? TotalCaloriesByMeal { get; set; }
+        public int TotalCaloriesByMeal { get; set; } = 0;
 
         public DateTime MealDate { get; set; } = DateTime.Now;
 

@@ -1,6 +1,7 @@
 ﻿using CalorieProject_BLL.Services;
 using CalorieProject_Models.Concretes;
 using Diet_BLL.Services;
+using Diet_Models.Concretes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,42 +22,63 @@ namespace Diet_PL
             this.personID = personID;
             mealServices = new MealServices();
             personServices = new PersonServices();
+            menuServices = new MenuServices();
+            foodServices = new FoodServices();
         }
         int personID;
         MealServices mealServices;
         PersonServices personServices;
+        MenuServices menuServices;
+        FoodServices foodServices;
 
-   /*
-
-        private void btnDailyData_Click_1(object sender, EventArgs e)
+        private void btnDailyData_Click(object sender, EventArgs e)
         {
-            DateTime selectedDate = DateTime.Now;
+            List<Menu> menus = menuServices.GetMenusForPeople(personID);
 
             Person person = personServices.GetPersonByID(personID);
 
-            int totalCalories = 0;
+            int totalCalories = 0; 
 
-            List<PersonMeal> personMeals = mealServices.GetDailyMeals(selectedDate, personID);
-
-
-            foreach (PersonMeal personMeal in personMeals)
+            foreach (Menu menu in menus)
             {
-                string[] personMealInfo = { personMeal.Meal.MealName, personMeal.Meal.MealDate.ToString(), personMeal.Meal.TotalCaloriesByMeal.ToString() };
+                string[] menuInfo = { menu.Meal.MealName, menu.MealDate.ToString(), menu.TotalCaloriesByMeal.ToString() };
 
-                ListViewItem lvi = new ListViewItem(personMealInfo);
-
-                lvi.Tag = personMeal;
+                ListViewItem lvi = new ListViewItem(menuInfo);
+                lvi.Tag = menu;
 
                 lvi_Meal.Items.Add(lvi);
 
-                totalCalories += (int)personMeal.Meal.TotalCaloriesByMeal;
+                totalCalories += menu.TotalCaloriesByMeal;
             }
 
+            lbl_DailyTotalCalories.Text = totalCalories.ToString();
 
-
-            lbl_DailyTotalCalories.Text = $"{totalCalories} Calories";
-            lbl_DailyMaxCalories.Text = $"{person.CaloriesPerDay} Calories";
+            lbl_DifferenceCalories.Text = $"{person.CaloriesPerDay - totalCalories} ";
         }
-   */
+
+        private void lvi_Meal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lvi_Food.Items.Clear();
+
+            Menu menu = (Menu)lvi_Meal.FocusedItem.Tag;
+            List<Food> menuFood = foodServices.GetFoodFromMenu(menu.MenuID);
+
+            foreach (Food food in menuFood)
+            {
+                string[] foodInfo = { food.FoodCategory.FoodCategoryName, food.Name, food.Quantity.ToString(),food.TotalCalories.ToString() };
+
+                ListViewItem lvi = new ListViewItem(foodInfo);
+                lvi.Tag = food;
+
+                lvi_Food.Items.Add(lvi);
+            }
+        }
+
+        private void MyMealHistory_Load(object sender, EventArgs e)
+        {
+            Person person = personServices.GetPersonByID(personID);
+
+            lbl_DailyMaxCalories.Text = person.CaloriesPerDay.ToString();
+        }
     }
 }

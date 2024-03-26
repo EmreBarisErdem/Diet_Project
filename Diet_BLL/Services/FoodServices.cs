@@ -68,6 +68,11 @@ namespace CalorieProject_BLL.Services
 
         }
 
+        public List <Food> GetFoodFromMenu(int menuID)
+        {
+            return foodManager.GetFoodFromMenu(menuID);
+        }
+
         public bool Delete(Food food)
         {
             return foodManager.Delete(food);

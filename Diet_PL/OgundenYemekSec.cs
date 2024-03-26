@@ -239,29 +239,38 @@ namespace Diet_PL
 
             List<Food> foods = new List<Food>();
 
-            foreach (Food food in lbox_Breakfast.Items)
+            if (lbox_Breakfast.Items.Count > 0)
             {
-                foods.Add(food);
+                foreach (Food food in lbox_Breakfast.Items)
+                {
 
-            }
+                    foodServices.AddOrUpdate(food);
+                    foods.Add(food);
 
-            menu.Foods = foods;
-            bool control = menuServices.AddOrUpdate(menu);
+                }
 
+                menu.Foods = foods;
+                bool control = menuServices.AddOrUpdate(menu);
 
-            if (control)
-            {
+                if (control)
+                {
 
-                MessageBox.Show("Meal Added Succesfully", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Meal Added Succesfully", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                }
+                else
+                {
+                    MessageBox.Show("A Problem Happened While Adding!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                lbox_Breakfast.Items.Clear();
+                lbl_Breakfast_Calories.Text = "... Calories";
             }
             else
             {
-                MessageBox.Show("A Problem Happened While Adding!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There is No Food To Add", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            lbox_Breakfast.Items.Clear();
-            lbl_Breakfast_Calories.Text = "... Calories";
         }
 
         private void btn_Transfer_Lunch_Click_1(object sender, EventArgs e)
@@ -280,36 +289,47 @@ namespace Diet_PL
 
             List<Food> foods = new List<Food>();
 
-            foreach (Food food in lbox_Breakfast.Items)
+            if (lbox_Lunch.Items.Count > 0)
             {
-                foods.Add(food);
+                foreach (Food food in lbox_Lunch.Items)
+                {
+                    foodServices.AddOrUpdate(food);
+                    foods.Add(food);
 
-            }
-
-            menu.Foods = foods;
-            bool control = menuServices.AddOrUpdate(menu);
+                }
 
 
-            if (control)
-            {
+                menu.Foods = foods;
+                bool control = menuServices.AddOrUpdate(menu);
 
-                MessageBox.Show("Meal Added Succesfully", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (control)
+                {
 
+                    MessageBox.Show("Meal Added Succesfully", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("A Problem Happened While Adding!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                lbox_Lunch.Items.Clear();
+                lbl_Lunch_Calories.Text = "... Calories";
             }
             else
             {
-                MessageBox.Show("A Problem Happened While Adding!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There is No Food To Add", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            lbox_Breakfast.Items.Clear();
-            lbl_Breakfast_Calories.Text = "... Calories";
+
+
         }
 
         private void btn_Transfer_Dinner_Click_1(object sender, EventArgs e)
         {
             Menu menu = new Menu();
 
-            Meal meal = mealServices.GetMealByID(3); // 1 == Breakfast
+            Meal meal = mealServices.GetMealByID(3); // 3 == Dinner
 
             DinnerCaloriesCalculator(out int calories);
 
@@ -321,29 +341,41 @@ namespace Diet_PL
 
             List<Food> foods = new List<Food>();
 
-            foreach (Food food in lbox_Breakfast.Items)
+            if (lbox_Dinner.Items.Count > 0)
             {
-                foods.Add(food);
+                foreach (Food food in lbox_Dinner.Items)
+                {
+                    foodServices.AddOrUpdate(food);
+                    foods.Add(food);
 
-            }
+                }
 
-            menu.Foods = foods;
-            bool control = menuServices.AddOrUpdate(menu);
+                menu.Foods = foods;
+                bool control = menuServices.AddOrUpdate(menu);
 
+                if (control)
+                {
 
-            if (control)
-            {
+                    MessageBox.Show("Meal Added Succesfully", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                MessageBox.Show("Meal Added Succesfully", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("A Problem Happened While Adding!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
+                lbox_Dinner.Items.Clear();
+                lbl_Dinner_Calories.Text = "... Calories";
             }
             else
             {
-                MessageBox.Show("A Problem Happened While Adding!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There is No Food To Add", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            lbox_Breakfast.Items.Clear();
-            lbl_Breakfast_Calories.Text = "... Calories";
+         
+
+            
+
         }
 
         private void OgundenYemekSec_Load_1(object sender, EventArgs e)

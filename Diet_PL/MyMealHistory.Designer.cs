@@ -46,6 +46,7 @@
             label8 = new Label();
             lbl_DailyTotalCalories = new Label();
             label3 = new Label();
+            columnHeader3 = new ColumnHeader();
             SuspendLayout();
             // 
             // btn_DetayGetir
@@ -65,30 +66,34 @@
             btnDailyData.TabIndex = 49;
             btnDailyData.Text = "Get Daily Data";
             btnDailyData.UseVisualStyleBackColor = true;
+            btnDailyData.Click += btnDailyData_Click;
             // 
             // lvi_Food
             // 
-            lvi_Food.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14, columnHeader15 });
+            lvi_Food.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14, columnHeader15, columnHeader3 });
             lvi_Food.FullRowSelect = true;
             lvi_Food.GridLines = true;
             lvi_Food.Location = new Point(406, 63);
             lvi_Food.Name = "lvi_Food";
-            lvi_Food.Size = new Size(323, 257);
+            lvi_Food.Size = new Size(407, 257);
             lvi_Food.TabIndex = 48;
             lvi_Food.UseCompatibleStateImageBehavior = false;
             lvi_Food.View = View.Details;
             // 
             // columnHeader13
             // 
-            columnHeader13.Text = "FoodCategoryName";
+            columnHeader13.Text = "Food Category Name";
+            columnHeader13.Width = 140;
             // 
             // columnHeader14
             // 
-            columnHeader14.Text = "FoodName";
+            columnHeader14.Text = "Food Name";
+            columnHeader14.Width = 80;
             // 
             // columnHeader15
             // 
-            columnHeader15.Text = "Calori";
+            columnHeader15.Text = "Quantity";
+            columnHeader15.Width = 70;
             // 
             // lvi_Meal
             // 
@@ -101,6 +106,7 @@
             lvi_Meal.TabIndex = 47;
             lvi_Meal.UseCompatibleStateImageBehavior = false;
             lvi_Meal.View = View.Details;
+            lvi_Meal.SelectedIndexChanged += lvi_Meal_SelectedIndexChanged;
             // 
             // meal
             // 
@@ -188,12 +194,17 @@
             label3.TabIndex = 39;
             label3.Text = "Daily Total Calories";
             // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Total Calories";
+            columnHeader3.Width = 110;
+            // 
             // MyMealHistory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(765, 482);
+            ClientSize = new Size(825, 482);
             Controls.Add(btn_DetayGetir);
             Controls.Add(btnDailyData);
             Controls.Add(lvi_Food);
@@ -207,9 +218,10 @@
             Controls.Add(lbl_DailyTotalCalories);
             Controls.Add(label3);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "MyMealHistory";
             Text = "MyMealHistory";
+            Load += MyMealHistory_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -234,5 +246,6 @@
         private Label label8;
         private Label lbl_DailyTotalCalories;
         private Label label3;
+        private ColumnHeader columnHeader3;
     }
 }

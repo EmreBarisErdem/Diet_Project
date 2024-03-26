@@ -27,8 +27,8 @@ namespace Diet_Models.Concretes
 
         public Portion Portion { get; set; } = Portion.Standart;
 
-        [NotMapped]
-        public int TotalCalories { get; set; } = 0;
+        
+        public int TotalCalories { get; set; } 
 
 
 

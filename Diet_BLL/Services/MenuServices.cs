@@ -23,5 +23,10 @@ namespace Diet_BLL.Services
             return menuManager.AddOrUpdate(menu);
         }
 
+        public List<Menu> GetMenusForPeople(int id)
+        {
+            return menuManager.GetMenusForPeople(id);
+        }
+
     }
 }

@@ -51,6 +51,11 @@ namespace Diet_DAL.Repositories.Concrete
 
         }
 
+        public List<Menu> GetMenusForPeople(int personID)
+        {
+            return _dbContext.Menus.Include(x => x.Meal).Where(x => x.PersonID == personID && x.MealDate.Day == DateTime.Now.Day).ToList();
+        }
+
         public List<Menu> GetMonthlyMeals(DateTime selectedMonth, int personID)
         {
             return _dbContext.Menus

@@ -275,6 +275,9 @@ namespace Diet_DAL.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("integer");
 
+                    b.Property<int>("TotalCalories")
+                        .HasColumnType("int");
+
                     b.HasKey("FoodID");
 
                     b.HasIndex("FoodCategoryID");
@@ -292,7 +295,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Şeftali",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -302,7 +306,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Üzüm",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -312,7 +317,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Çilek",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -322,7 +328,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Zeytin",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -332,7 +339,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Muz",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -342,7 +350,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Elma",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -352,7 +361,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Portakal",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -362,7 +372,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Mandalina",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -372,7 +383,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Nar",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -382,7 +394,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Limon",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -392,7 +405,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kayısı",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -402,7 +416,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "İncir",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -412,7 +427,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Erik",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -422,7 +438,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Ayva",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -432,7 +449,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Avakado",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -442,7 +460,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Ananas",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -452,7 +471,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kiraz",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -462,7 +482,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kivi",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -472,7 +493,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Bamya",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -482,7 +504,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Bezelye",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -492,7 +515,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Biber",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -502,7 +526,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Brokoli",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -512,7 +537,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Domates",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -522,7 +548,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Salatalık",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -532,7 +559,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Enginar",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -542,7 +570,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Havuç",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -552,7 +581,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Ispanak",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -562,7 +592,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Pırasa",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -572,7 +603,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kabak",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -582,7 +614,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Patates",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -592,7 +625,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Mantar",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -602,7 +636,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Mısır",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -612,7 +647,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Patlıcan",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -622,7 +658,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Sarımsak",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -632,7 +669,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Turp",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -642,7 +680,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Hamburger",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -652,7 +691,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Double Cheeseburger",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -662,7 +702,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Burger King Whopper",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -672,7 +713,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "McDonalds Cheeseburger",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -682,7 +724,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Tavuk Nugget",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -692,7 +735,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Fish and Chips",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -702,7 +746,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Patates Kızartması",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -712,7 +757,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "McDonalds Big Mac",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -722,7 +768,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Cheddar",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -732,7 +779,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Mozzarella",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -742,7 +790,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kaşar Peyniri",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -752,7 +801,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Eski Kaşar Peyniri",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -762,7 +812,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Tulum Peyniri",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -772,7 +823,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Krem Peynir",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -782,7 +834,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Keçi Peyniri",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -792,7 +845,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Koyun Peyniri",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -802,7 +856,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Cottage Peyniri",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -812,7 +867,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Biftek",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -822,7 +878,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Antrikot",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -832,7 +889,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Bonfile",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -842,7 +900,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Hindi",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -852,7 +911,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Tavuk",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -862,7 +922,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kuzu Pirzola",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -872,7 +933,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Domuz Eti",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -882,7 +944,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Şinitzel",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -892,7 +955,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Dana Kıyma",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -902,7 +966,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Sosis",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -912,7 +977,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Sucuk",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -922,7 +988,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Salam",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -932,7 +999,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kek",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -942,7 +1010,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Donut",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -952,7 +1021,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Tiramisu",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -962,7 +1032,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Waffle",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -972,7 +1043,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Profiterol",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -982,7 +1054,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Sütlaç",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -992,7 +1065,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Baklava",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1002,7 +1076,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Muhallebi",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1012,7 +1087,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Puding",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1022,7 +1098,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kola",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1032,7 +1109,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Fanta",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1042,7 +1120,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Sprite",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1052,7 +1131,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Ayran",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1062,7 +1142,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Çay",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1072,7 +1153,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kahve",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1082,7 +1164,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "IceTea",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1092,7 +1175,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Arpa Şehriye",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1102,7 +1186,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Noodle",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1112,7 +1197,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Erişte",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1122,7 +1208,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Makarna",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1132,7 +1219,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Mantı",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1142,7 +1230,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Yulaf Ezmesi",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1152,7 +1241,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Müsli",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1162,7 +1252,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Mısır Gevreği",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1172,7 +1263,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Buğday Ezmesi",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1182,7 +1274,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kuskus",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1192,7 +1285,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Bakla",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1202,7 +1296,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Barbunya",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1212,7 +1307,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Nohut",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1222,7 +1318,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kuru Fasulye",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1232,7 +1329,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Mercimek",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1242,7 +1340,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Yeşil Fasulye",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1252,7 +1351,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Börülce",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1262,7 +1362,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Zeytinyağı",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1272,7 +1373,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Ayçiçekyağı",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1282,7 +1384,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kanola Yağı",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1292,7 +1395,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Tereyağı",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1302,7 +1406,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Margarin",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1312,7 +1417,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "PalmYağı",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1322,7 +1428,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "SusamYağı",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1332,7 +1439,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Süt Tozu",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1342,7 +1450,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Cacık",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1352,7 +1461,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kefir",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1362,7 +1472,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Krema",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1372,7 +1483,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Sıcak Çikolata",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1382,7 +1494,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Badem Sütü",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1392,7 +1505,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Tam Yağlı Süt",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1402,7 +1516,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Az Yağlı Süt",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1412,7 +1527,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Yarım Yağlı Süt",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1422,7 +1538,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Beyaz Ekmek",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1432,7 +1549,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Çavdarlı Ekmek",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1442,7 +1560,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Tam Tahıllı Ekmek",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1452,7 +1571,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Kruvasan",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1462,7 +1582,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Su Böreği",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1472,7 +1593,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Tost",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         },
                         new
                         {
@@ -1482,7 +1604,8 @@ namespace Diet_DAL.Migrations
                             Grams = 100,
                             Name = "Poğaça",
                             Portion = 2,
-                            Quantity = 1
+                            Quantity = 1,
+                            TotalCalories = 0
                         });
                 });
 
