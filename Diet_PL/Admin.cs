@@ -26,7 +26,9 @@ namespace Diet_PL
         PersonServices personServices;
         FoodServices foodServices;
 
-        private void btn_MemberBan_Click(object sender, EventArgs e)
+
+
+        private void btn_MemberBan_Click_1(object sender, EventArgs e)
         {
             Person person = lbox_Members.SelectedItem as Person;
 
@@ -52,10 +54,9 @@ namespace Diet_PL
             {
                 MessageBox.Show("A Problem Occured While Changing Status", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
-        private void Admin_Load(object sender, EventArgs e)
+        private void Admin_Load_1(object sender, EventArgs e)
         {
             lbox_Members.DataSource = personServices.GetAll();
             lbox_Members.DisplayMember = "UserName";
@@ -66,24 +67,7 @@ namespace Diet_PL
             lbox_Foods.ValueMember = "FoodID";
         }
 
-        private void lbox_Members_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            Person selectedPerson = lbox_Members.SelectedItem as Person;
-
-            UserDetailScreen userDetailScreen = new UserDetailScreen(selectedPerson.PersonID);
-            userDetailScreen.Show();
-        }
-
-        private void lbox_Foods_DoubleClick(object sender, EventArgs e)
-        {
-            Food selectedFood = lbox_Foods.SelectedItem as Food;
-
-            FoodDetailScreen foodDetailScreen = new FoodDetailScreen(selectedFood.FoodID);
-
-            foodDetailScreen.Show();
-        }
-
-        private void btnDeleteFood_Click(object sender, EventArgs e)
+        private void btnDeleteFood_Click_1(object sender, EventArgs e)
         {
 
 
@@ -103,8 +87,23 @@ namespace Diet_PL
             lbox_Foods.DataSource = null;
             lbox_Foods.DataSource = foodServices.GetAll();
             lbox_Foods.DisplayMember = "Name";
+        }
 
+        private void lbox_Members_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            Person selectedPerson = lbox_Members.SelectedItem as Person;
 
+            UserDetailScreen userDetailScreen = new UserDetailScreen(selectedPerson.PersonID);
+            userDetailScreen.Show();
+        }
+
+        private void lbox_Foods_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Food selectedFood = lbox_Foods.SelectedItem as Food;
+
+            FoodDetailScreen foodDetailScreen = new FoodDetailScreen(selectedFood.FoodID);
+
+            foodDetailScreen.Show();
         }
     }
 }

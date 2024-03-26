@@ -59,6 +59,7 @@
             btnChangeImg.TabIndex = 19;
             btnChangeImg.Text = "Change Image";
             btnChangeImg.UseVisualStyleBackColor = true;
+            btnChangeImg.Click += btnChangeImg_Click_1;
             // 
             // btnDeleteImg
             // 
@@ -69,6 +70,7 @@
             btnDeleteImg.TabIndex = 18;
             btnDeleteImg.Text = "Delete Image";
             btnDeleteImg.UseVisualStyleBackColor = true;
+            btnDeleteImg.Click += btnDeleteImg_Click_1;
             // 
             // btnUpdate
             // 
@@ -79,6 +81,7 @@
             btnUpdate.TabIndex = 17;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click_1;
             // 
             // pBoxFoodImg
             // 
@@ -154,6 +157,7 @@
             Controls.Add(txtFoodName);
             Name = "FoodDetailScreen";
             Text = "FoodDetailScreen";
+            Load += FoodDetailScreen_Load_1;
             ((System.ComponentModel.ISupportInitialize)pBoxFoodImg).EndInit();
             ResumeLayout(false);
             PerformLayout();

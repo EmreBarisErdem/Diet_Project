@@ -24,8 +24,21 @@ namespace Diet_PL
         int personID;
         PersonServices personServices;
 
+        public void RefreshData(Person person)
+        {
+            txtFirstName.Text = person.FirstName;
+            txtLastName.Text = person.LastName;
+            txtBirthDate.Text = person.BirthDate.Date.ToString();
+            txtGender.Text = person.Gender.ToString();
+            txtPassword.Text = person.Password;
+            txtWeight.Text = person.Weight.ToString();
+            txtHeight.Text = person.Height.ToString();
+            txtActivityStatus.Text = person.ActivityStatus.ToString();
+            txtCaloriesPDay.Text = person.CaloriesPerDay.ToString();
+            txtUserStatus.Text = person.UserStatus.ToString();
+        }
 
-        private void UserDetailScreen_Load(object sender, EventArgs e)
+        private void UserDetailScreen_Load_1(object sender, EventArgs e)
         {
             Person person = personServices.GetPersonByID(personID);
 
@@ -50,7 +63,7 @@ namespace Diet_PL
             }
         }
 
-        private void btnUnBan_Click(object sender, EventArgs e)
+        private void btnUnBan_Click_1(object sender, EventArgs e)
         {
             Person person = personServices.GetPersonByID(personID);
 
@@ -69,20 +82,5 @@ namespace Diet_PL
 
             RefreshData(person);
         }
-
-        public void RefreshData(Person person)
-        {
-            txtFirstName.Text = person.FirstName;
-            txtLastName.Text = person.LastName;
-            txtBirthDate.Text = person.BirthDate.Date.ToString();
-            txtGender.Text = person.Gender.ToString();
-            txtPassword.Text = person.Password;
-            txtWeight.Text = person.Weight.ToString();
-            txtHeight.Text = person.Height.ToString();
-            txtActivityStatus.Text = person.ActivityStatus.ToString();
-            txtCaloriesPDay.Text = person.CaloriesPerDay.ToString();
-            txtUserStatus.Text = person.UserStatus.ToString();
-        }
-
     }
 }

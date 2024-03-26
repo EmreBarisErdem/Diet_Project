@@ -29,43 +29,7 @@ namespace Diet_PL
 
 
 
-        private void FoodDetailScreen_Load(object sender, EventArgs e)
-        {
-            cmbFoodCategory.DataSource = foodCategoryServices.GetAll();
-            cmbFoodCategory.DisplayMember = "FoodCategoryName";
-            cmbFoodCategory.ValueMember = "FoodCategoryID";
-
-
-            Food food = foodServices.GetByID(foodID);
-            FoodCategory foodCategory = foodCategoryServices.GetByID(food.FoodCategoryID);
-
-            cmbFoodCategory.SelectedIndex = foodCategory.FoodCategoryID - 1; // Index 0 'dan başlıyor
-
-            
-            food.FoodCategory = foodCategory;
-
-            txtFoodName.Text = food.Name;
-
-            txtCalories.Text = food.Calories.ToString();
-
-            pBoxFoodImg.ImageLocation = food.PicturePath;
-
-        }
-
-        private void btnDeleteImg_Click(object sender, EventArgs e)
-        {
-            pBoxFoodImg.ImageLocation = null;
-        }
-
-        private void btnChangeImg_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            pBoxFoodImg.ImageLocation = openFileDialog.FileName;
-
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             Food food = foodServices.GetByID(foodID);
 
@@ -93,5 +57,38 @@ namespace Diet_PL
             control = foodServices.AddOrUpdate(food);
         }
 
+        private void btnChangeImg_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            pBoxFoodImg.ImageLocation = openFileDialog.FileName;
+        }
+
+        private void btnDeleteImg_Click_1(object sender, EventArgs e)
+        {
+            pBoxFoodImg.ImageLocation = null;
+        }
+
+        private void FoodDetailScreen_Load_1(object sender, EventArgs e)
+        {
+            cmbFoodCategory.DataSource = foodCategoryServices.GetAll();
+            cmbFoodCategory.DisplayMember = "FoodCategoryName";
+            cmbFoodCategory.ValueMember = "FoodCategoryID";
+
+
+            Food food = foodServices.GetByID(foodID);
+            FoodCategory foodCategory = foodCategoryServices.GetByID(food.FoodCategoryID);
+
+            cmbFoodCategory.SelectedIndex = foodCategory.FoodCategoryID - 1; // Index 0 'dan başlıyor
+
+
+            food.FoodCategory = foodCategory;
+
+            txtFoodName.Text = food.Name;
+
+            txtCalories.Text = food.Calories.ToString();
+
+            pBoxFoodImg.ImageLocation = food.PicturePath;
+        }
     }
 }

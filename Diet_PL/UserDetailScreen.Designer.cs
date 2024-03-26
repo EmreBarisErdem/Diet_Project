@@ -48,6 +48,7 @@
             txtLastName = new TextBox();
             txtBirthDate = new TextBox();
             txtFirstName = new TextBox();
+            btnUnBan = new Button();
             SuspendLayout();
             // 
             // label10
@@ -230,11 +231,23 @@
             txtFirstName.Size = new Size(255, 33);
             txtFirstName.TabIndex = 19;
             // 
+            // btnUnBan
+            // 
+            btnUnBan.Location = new Point(449, 535);
+            btnUnBan.Margin = new Padding(5);
+            btnUnBan.Name = "btnUnBan";
+            btnUnBan.Size = new Size(300, 63);
+            btnUnBan.TabIndex = 39;
+            btnUnBan.Text = "UnBan The Person";
+            btnUnBan.UseVisualStyleBackColor = true;
+            btnUnBan.Click += btnUnBan_Click_1;
+            // 
             // UserDetailScreen
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1070, 587);
+            ClientSize = new Size(1070, 623);
+            Controls.Add(btnUnBan);
             Controls.Add(label10);
             Controls.Add(txtUserStatus);
             Controls.Add(label9);
@@ -257,6 +270,7 @@
             Controls.Add(txtFirstName);
             Name = "UserDetailScreen";
             Text = "Form1";
+            Load += UserDetailScreen_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -283,5 +297,6 @@
         private TextBox txtLastName;
         private TextBox txtBirthDate;
         private TextBox txtFirstName;
+        private Button btnUnBan;
     }
 }

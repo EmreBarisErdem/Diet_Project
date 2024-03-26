@@ -95,6 +95,7 @@
             btn_SignUp.TabIndex = 35;
             btn_SignUp.Text = "Sign Up";
             btn_SignUp.UseVisualStyleBackColor = false;
+            btn_SignUp.Click += btn_SignUp_Click_1;
             // 
             // cmb_ActvityStatus
             // 
@@ -270,6 +271,7 @@
             Controls.Add(label1);
             Name = "LogOnScreen";
             Text = "LogOnScreen";
+            Load += LogOnScreen_Load;
             ((System.ComponentModel.ISupportInitialize)nud_Height).EndInit();
             ((System.ComponentModel.ISupportInitialize)nud_Weight).EndInit();
             ResumeLayout(false);

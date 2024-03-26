@@ -27,18 +27,9 @@ namespace Diet_PL
         FoodCategoryServices foodCategoryServices;
         Food food;
 
-        private void AddingFoodScreen_Load(object sender, EventArgs e)
+    
+        private void btn_AddFoodDetails_Click_1(object sender, EventArgs e)
         {
-            cmb_Categori.DataSource = foodCategoryServices.GetAll();
-            cmb_Categori.DisplayMember = "FoodCategoryName";
-            cmb_Categori.ValueMember = "FoodCategoryID";
-
-        }
-
-
-        private void btn_AddFoodDetails_Click(object sender, EventArgs e)
-        {
-
 
             if (foodServices.IsNameValid(txt_FoodName.Text) && !txt_FoodName.Text.IsNullOrEmpty())
             {
@@ -92,23 +83,22 @@ namespace Diet_PL
             }
 
 
-
-
-
         }
 
-
-
-
-        private void btn_AddImage_Click(object sender, EventArgs e)
+        private void btn_AddImage_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
 
             ofd.ShowDialog();
 
             pboxImage.ImageLocation = ofd.FileName;
-
         }
 
+        private void AddingFoodScreen_Load_1(object sender, EventArgs e)
+        {
+            cmb_Categori.DataSource = foodCategoryServices.GetAll();
+            cmb_Categori.DisplayMember = "FoodCategoryName";
+            cmb_Categori.ValueMember = "FoodCategoryID";
+        }
     }
 }

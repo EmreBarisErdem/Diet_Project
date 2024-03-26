@@ -59,6 +59,7 @@
             button1.TabIndex = 6;
             button1.Text = "Click Here to Begin Your Healty Diet Journey\r\n";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // pictureBox1
             // 

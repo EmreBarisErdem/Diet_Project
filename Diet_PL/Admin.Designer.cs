@@ -64,6 +64,7 @@
             btnDeleteFood.TabIndex = 12;
             btnDeleteFood.Text = "Delete Food";
             btnDeleteFood.UseVisualStyleBackColor = true;
+            btnDeleteFood.Click += btnDeleteFood_Click_1;
             // 
             // lbox_Foods
             // 
@@ -74,6 +75,7 @@
             lbox_Foods.Name = "lbox_Foods";
             lbox_Foods.Size = new Size(549, 429);
             lbox_Foods.TabIndex = 11;
+            lbox_Foods.MouseDoubleClick += lbox_Foods_MouseDoubleClick;
             // 
             // btn_MemberBan
             // 
@@ -83,6 +85,7 @@
             btn_MemberBan.TabIndex = 10;
             btn_MemberBan.Text = "Ban Member ";
             btn_MemberBan.UseVisualStyleBackColor = true;
+            btn_MemberBan.Click += btn_MemberBan_Click_1;
             // 
             // lbox_Members
             // 
@@ -93,6 +96,7 @@
             lbox_Members.Name = "lbox_Members";
             lbox_Members.Size = new Size(488, 429);
             lbox_Members.TabIndex = 9;
+            lbox_Members.MouseDoubleClick += lbox_Members_MouseDoubleClick_1;
             // 
             // Admin
             // 
@@ -107,6 +111,7 @@
             Controls.Add(lbox_Members);
             Name = "Admin";
             Text = "Admin";
+            Load += Admin_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }
