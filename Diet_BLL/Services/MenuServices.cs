@@ -28,5 +28,14 @@ namespace Diet_BLL.Services
             return menuManager.GetMenusForPeople(id);
         }
 
+        public bool AddMenu(Menu menu)
+        {
+            return menuManager.Add(menu);
+        }
+
+        public Menu GetMenu(int id)
+        {
+            return menuManager.Get(id);
+        }
     }
 }

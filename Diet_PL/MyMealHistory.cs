@@ -20,19 +20,22 @@ namespace Diet_PL
         {
             InitializeComponent();
             this.personID = personID;
-            mealServices = new MealServices();
+
             personServices = new PersonServices();
             menuServices = new MenuServices();
             foodServices = new FoodServices();
         }
         int personID;
-        MealServices mealServices;
+        
         PersonServices personServices;
         MenuServices menuServices;
         FoodServices foodServices;
 
         private void btnDailyData_Click(object sender, EventArgs e)
         {
+
+            lvi_Meal.Items.Clear();
+
             List<Menu> menus = menuServices.GetMenusForPeople(personID);
 
             Person person = personServices.GetPersonByID(personID);
@@ -51,9 +54,9 @@ namespace Diet_PL
                 totalCalories += menu.TotalCaloriesByMeal;
             }
 
-            lbl_DailyTotalCalories.Text = totalCalories.ToString();
+            lbl_DailyTotalCalories.Text = totalCalories.ToString("0.00") + " Kcal";
 
-            lbl_DifferenceCalories.Text = $"{person.CaloriesPerDay - totalCalories} ";
+            lbl_DifferenceCalories.Text = (person.CaloriesPerDay - totalCalories).ToString("0.00") + " Kcal";
         }
 
         private void lvi_Meal_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,14 +64,17 @@ namespace Diet_PL
             lvi_Food.Items.Clear();
 
             Menu menu = (Menu)lvi_Meal.FocusedItem.Tag;
-            List<Food> menuFood = foodServices.GetFoodFromMenu(menu.MenuID);
 
-            foreach (Food food in menuFood)
+            Menu selectedMenu = menuServices.GetMenu(menu.MenuID);
+
+            List<MenuFoods> menuFoods = foodServices.GetFoodFromMenu(selectedMenu.MenuID);
+
+            foreach (MenuFoods menuFood in menuFoods)
             {
-                string[] foodInfo = { food.FoodCategory.FoodCategoryName, food.Name, food.Quantity.ToString(),food.TotalCalories.ToString() };
+                string[] foodInfo = { menuFood.Food.FoodCategory.FoodCategoryName, menuFood.Food.Name, menuFood.Food.Quantity.ToString(), menuFood.Food.TotalCalories.ToString() };
 
                 ListViewItem lvi = new ListViewItem(foodInfo);
-                lvi.Tag = food;
+                lvi.Tag = menuFood;
 
                 lvi_Food.Items.Add(lvi);
             }
@@ -78,7 +84,7 @@ namespace Diet_PL
         {
             Person person = personServices.GetPersonByID(personID);
 
-            lbl_DailyMaxCalories.Text = person.CaloriesPerDay.ToString();
+            lbl_DailyMaxCalories.Text = person.CaloriesPerDay.ToString("0.00") + " Kcal";
         }
     }
 }

@@ -81,6 +81,7 @@ namespace Diet_PL
             }
 
             RefreshData(person);
+            btnUnBan.Enabled = false;
         }
     }
 }

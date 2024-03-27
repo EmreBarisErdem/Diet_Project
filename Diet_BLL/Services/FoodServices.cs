@@ -68,7 +68,7 @@ namespace CalorieProject_BLL.Services
 
         }
 
-        public List <Food> GetFoodFromMenu(int menuID)
+        public List<MenuFoods> GetFoodFromMenu(int menuID)
         {
             return foodManager.GetFoodFromMenu(menuID);
         }

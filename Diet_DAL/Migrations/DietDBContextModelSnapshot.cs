@@ -258,9 +258,6 @@ namespace Diet_DAL.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("integer");
 
-                    b.Property<int?>("MenuID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(30)");
@@ -281,8 +278,6 @@ namespace Diet_DAL.Migrations
                     b.HasKey("FoodID");
 
                     b.HasIndex("FoodCategoryID");
-
-                    b.HasIndex("MenuID");
 
                     b.ToTable("Foods");
 
@@ -1639,6 +1634,29 @@ namespace Diet_DAL.Migrations
                     b.ToTable("Menus");
                 });
 
+            modelBuilder.Entity("Diet_Models.Concretes.MenuFoods", b =>
+                {
+                    b.Property<int>("MenuFoodsID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MenuFoodsID"));
+
+                    b.Property<int>("FoodID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MenuID")
+                        .HasColumnType("int");
+
+                    b.HasKey("MenuFoodsID");
+
+                    b.HasIndex("FoodID");
+
+                    b.HasIndex("MenuID");
+
+                    b.ToTable("MenuFoods");
+                });
+
             modelBuilder.Entity("Diet_Models.Concretes.Food", b =>
                 {
                     b.HasOne("CalorieProject_Models.Concretes.FoodCategory", "FoodCategory")
@@ -1647,13 +1665,7 @@ namespace Diet_DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Diet_Models.Concretes.Menu", "Menu")
-                        .WithMany("Foods")
-                        .HasForeignKey("MenuID");
-
                     b.Navigation("FoodCategory");
-
-                    b.Navigation("Menu");
                 });
 
             modelBuilder.Entity("Diet_Models.Concretes.Menu", b =>
@@ -1675,6 +1687,25 @@ namespace Diet_DAL.Migrations
                     b.Navigation("Person");
                 });
 
+            modelBuilder.Entity("Diet_Models.Concretes.MenuFoods", b =>
+                {
+                    b.HasOne("Diet_Models.Concretes.Food", "Food")
+                        .WithMany("MenuFoods")
+                        .HasForeignKey("FoodID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Diet_Models.Concretes.Menu", "Menu")
+                        .WithMany("MenuFoods")
+                        .HasForeignKey("MenuID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Food");
+
+                    b.Navigation("Menu");
+                });
+
             modelBuilder.Entity("CalorieProject_Models.Concretes.FoodCategory", b =>
                 {
                     b.Navigation("Foods");
@@ -1690,9 +1721,14 @@ namespace Diet_DAL.Migrations
                     b.Navigation("Menus");
                 });
 
+            modelBuilder.Entity("Diet_Models.Concretes.Food", b =>
+                {
+                    b.Navigation("MenuFoods");
+                });
+
             modelBuilder.Entity("Diet_Models.Concretes.Menu", b =>
                 {
-                    b.Navigation("Foods");
+                    b.Navigation("MenuFoods");
                 });
 #pragma warning restore 612, 618
         }

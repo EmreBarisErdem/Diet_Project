@@ -28,6 +28,12 @@ namespace CalorieProject_DAL.Repositories.Concrete
             return _contextDB.SaveChanges() > 0;
         }
 
+        public bool Add(T entity)
+        { 
+            _table.Add(entity);
+            return _contextDB.SaveChanges() > 0;
+        }
+
         public bool Update(int id)
         {
             T entity = Get(id);
