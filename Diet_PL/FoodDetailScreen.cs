@@ -55,11 +55,23 @@ namespace Diet_PL
 
 
             control = foodServices.AddOrUpdate(food);
+
+            if(control)
+            {
+                MessageBox.Show("Food Updated Successfully", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("A Problem Occured While Updating", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            this.Close();
         }
 
         private void btnChangeImg_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
 
             pBoxFoodImg.ImageLocation = openFileDialog.FileName;
         }

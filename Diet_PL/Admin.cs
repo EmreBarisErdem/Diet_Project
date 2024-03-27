@@ -62,9 +62,7 @@ namespace Diet_PL
             lbox_Members.DisplayMember = "UserName";
             lbox_Members.ValueMember = "PersonID";
 
-            lbox_Foods.DataSource = foodServices.GetAll();
-            lbox_Foods.DisplayMember = "Name";
-            lbox_Foods.ValueMember = "FoodID";
+            RefreshFoodList();
         }
 
         private void btnDeleteFood_Click_1(object sender, EventArgs e)
@@ -99,11 +97,26 @@ namespace Diet_PL
 
         private void lbox_Foods_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Food selectedFood = lbox_Foods.SelectedItem as Food;
+            Food food = lbox_Foods.SelectedItem as Food;
 
-            FoodDetailScreen foodDetailScreen = new FoodDetailScreen(selectedFood.FoodID);
+            Food selectedFood = foodServices.GetByID(food.FoodID);
 
-            foodDetailScreen.Show();
+            FoodDetailScreen foodDetailScreen = new FoodDetailScreen(selectedFood.FoodID);           
+
+            foodDetailScreen.ShowDialog();
+
+            RefreshFoodList();
+
+            
+        }
+
+        private void RefreshFoodList()
+        {           
+            lbox_Foods.DataSource = null;
+
+            lbox_Foods.DataSource = foodServices.GetAll();
+            lbox_Foods.DisplayMember = "Name";
+            lbox_Foods.ValueMember = "FoodID";
         }
     }
 }

@@ -20,13 +20,13 @@ namespace Diet_PL
         {
             InitializeComponent();
             this.personID = personID;
-            mealServices = new MealServices();
+
             personServices = new PersonServices();
             menuServices = new MenuServices();
             foodServices = new FoodServices();
         }
         int personID;
-        MealServices mealServices;
+        
         PersonServices personServices;
         MenuServices menuServices;
         FoodServices foodServices;
@@ -54,9 +54,9 @@ namespace Diet_PL
                 totalCalories += menu.TotalCaloriesByMeal;
             }
 
-            lbl_DailyTotalCalories.Text = totalCalories.ToString();
+            lbl_DailyTotalCalories.Text = totalCalories.ToString("0.00") + " Kcal";
 
-            lbl_DifferenceCalories.Text = $"{person.CaloriesPerDay - totalCalories} ";
+            lbl_DifferenceCalories.Text = (person.CaloriesPerDay - totalCalories).ToString("0.00") + " Kcal";
         }
 
         private void lvi_Meal_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace Diet_PL
         {
             Person person = personServices.GetPersonByID(personID);
 
-            lbl_DailyMaxCalories.Text = person.CaloriesPerDay.ToString();
+            lbl_DailyMaxCalories.Text = person.CaloriesPerDay.ToString("0.00") + " Kcal";
         }
     }
 }

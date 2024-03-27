@@ -234,7 +234,7 @@ namespace Diet_PL
         private void btn_Transfer_Breakfast_Click_1(object sender, EventArgs e)
         {
             Menu menu = new Menu();
-            MenuFoods menuFood = new MenuFoods();
+            
 
             Meal meal = mealServices.GetMealByID(1); // 1 == Breakfast
 
@@ -250,15 +250,18 @@ namespace Diet_PL
 
             List<MenuFoods> menuFoods = new List<MenuFoods>();
 
-            menuFood.Menu = menu;
 
             if (lbox_Breakfast.Items.Count > 0)
             {
                 foreach (Food food in lbox_Breakfast.Items)
                 {
+                    MenuFoods menuFood = new MenuFoods();
+
                     menuFood.Menu = menuServices.GetMenu(menu.MenuID);
                     menuFood.Food = foodServices.GetByID(food.FoodID);
+
                     menuFoods.Add(menuFood);
+
                     food.MenuFoods = menuFoods;
                     menu.MenuFoods = menuFoods;
 
@@ -292,7 +295,7 @@ namespace Diet_PL
         private void btn_Transfer_Lunch_Click_1(object sender, EventArgs e)
         {
             Menu menu = new Menu();
-            MenuFoods menuFood = new MenuFoods();
+            
 
             Meal meal = mealServices.GetMealByID(2); // 2 == Lunch
 
@@ -307,24 +310,26 @@ namespace Diet_PL
             bool control = menuServices.AddMenu(menu);
 
             List<MenuFoods> menuFoods = new List<MenuFoods>();
-
-            menuFood.Menu = menu;
+           
 
             if (lbox_Lunch.Items.Count > 0)
             {
                 foreach (Food food in lbox_Lunch.Items)
                 {
+                    MenuFoods menuFood = new MenuFoods();
+
                     menuFood.Menu = menuServices.GetMenu(menu.MenuID);
                     menuFood.Food = foodServices.GetByID(food.FoodID);
+
                     menuFoods.Add(menuFood);
+
                     food.MenuFoods = menuFoods;
+                    menu.MenuFoods = menuFoods;
 
 
                     menuFoodServices.AddOrUpdate(menuFood);
                 }
-
-
-                menu.MenuFoods = menuFoods;
+               
 
 
                 if (control)
@@ -353,7 +358,7 @@ namespace Diet_PL
         private void btn_Transfer_Dinner_Click_1(object sender, EventArgs e)
         {
             Menu menu = new Menu();
-            MenuFoods menuFood = new MenuFoods();
+            
 
             Meal meal = mealServices.GetMealByID(3); // 3 == Dinner
 
@@ -374,19 +379,20 @@ namespace Diet_PL
             {
                 foreach (Food food in lbox_Dinner.Items)
                 {
+                    MenuFoods menuFood = new MenuFoods();
+
                     menuFood.Menu = menuServices.GetMenu(menu.MenuID);
                     menuFood.Food = foodServices.GetByID(food.FoodID);
+
                     menuFoods.Add(menuFood);
+
                     food.MenuFoods = menuFoods;
+                    menu.MenuFoods = menuFoods;
 
 
                     menuFoodServices.AddOrUpdate(menuFood);
                 }
-
-                menu.MenuFoods = menuFoods;
-
-
-
+                
 
                 if (control)
                 {
