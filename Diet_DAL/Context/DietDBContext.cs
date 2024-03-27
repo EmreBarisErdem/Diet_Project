@@ -1,4 +1,5 @@
 ﻿using CalorieProject_Models.Concretes;
+using Diet_DAL.Repositories.Concrete;
 using Diet_Models.Concretes;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -18,6 +19,9 @@ namespace CalorieProject_DAL.Context
         public DbSet<FoodCategory> FoodCategories { get; set; }
 
         public DbSet<MenuFoods> MenuFoods { get; set; }
+
+        public DbSet<FoodSales> FoodSales { get; set; } // Sorgu İçin Yapılmıştır
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

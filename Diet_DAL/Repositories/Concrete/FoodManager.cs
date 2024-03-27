@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace CalorieProject_DAL.Repositories.Concrete
@@ -28,6 +29,14 @@ namespace CalorieProject_DAL.Repositories.Concrete
         {
             return _dbContext.MenuFoods.Include(x=>x.Food.FoodCategory).Include(x=>x.Menu).Where(x=>x.MenuID == menuID).ToList();
         }
+        
 
+        public List<dynamic> GetMaxFoodQuantity()
+        {
+
+            var result = _dbContext.Set<object>().FromSqlRaw("SELECT mf.FoodID,f.Name, SUM(f.Quantity) as 'TotalSales'\r\nFROM Menus m INNER JOIN MenuFoods mf  ON mf.MenuID = m.MenuID\r\nINNER JOIN Foods f ON f.FoodID = mf.FoodID\r\nGROUP BY mf.FoodID,f.Name\r\nORDER BY 'TotalSales' DESC").ToList();
+
+            return result;
+        }
     }
 }

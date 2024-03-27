@@ -1612,6 +1612,21 @@ namespace Diet_DAL.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Diet_Models.Concretes.FoodSales", b =>
+                {
+                    b.Property<int>("FoodID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaxQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("FoodSales");
+                });
+
             modelBuilder.Entity("Diet_Models.Concretes.Menu", b =>
                 {
                     b.Property<int>("MenuID")

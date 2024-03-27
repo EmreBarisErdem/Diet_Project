@@ -28,6 +28,11 @@ namespace Diet_BLL.Services
             return menuManager.GetMenusForPeople(id);
         }
 
+        public List<Menu> GetMonthlyMeals(DateTime selectedMonth,int id)
+        {
+            return menuManager.GetMonthlyMeals(selectedMonth,id);
+        }
+
         public bool AddMenu(Menu menu)
         {
             return menuManager.Add(menu);
