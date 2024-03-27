@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Diet_DAL.Migrations
 {
     [DbContext(typeof(DietDBContext))]
-    [Migration("20240327101050_deneme")]
+    [Migration("20240327141421_deneme")]
     partial class deneme
     {
         /// <inheritdoc />
@@ -1605,6 +1605,21 @@ namespace Diet_DAL.Migrations
                             Quantity = 1,
                             TotalCalories = 0
                         });
+                });
+
+            modelBuilder.Entity("Diet_Models.Concretes.FoodSales", b =>
+                {
+                    b.Property<int>("FoodID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaxQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable("FoodSales");
                 });
 
             modelBuilder.Entity("Diet_Models.Concretes.Menu", b =>

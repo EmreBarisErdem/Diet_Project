@@ -82,6 +82,9 @@ namespace Diet_PL
                 MessageBox.Show("Please Enter Calories As Numbers (kcal)");
             }
 
+            txt_Calorie.Clear();
+            txt_FoodName.Clear();
+
 
         }
 

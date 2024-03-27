@@ -78,6 +78,11 @@ namespace CalorieProject_BLL.Services
             return foodManager.Delete(food);
         }
 
+        public List<dynamic> GetMaxFoodQuantity()
+        {
+            return foodManager.GetMaxFoodQuantity();
+        }
+
 
 
     }

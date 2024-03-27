@@ -27,6 +27,18 @@ namespace Diet_DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "FoodSales",
+                columns: table => new
+                {
+                    FoodID = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MaxQuantity = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Meals",
                 columns: table => new
                 {
@@ -338,6 +350,9 @@ namespace Diet_DAL.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "FoodSales");
+
             migrationBuilder.DropTable(
                 name: "MenuFoods");
 
