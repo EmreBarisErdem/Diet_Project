@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Diet_DAL.Migrations
 {
     [DbContext(typeof(DietDBContext))]
-    [Migration("20240327184501_FINAL")]
-    partial class FINAL
+    [Migration("20240327192729_FinalCountdown")]
+    partial class FinalCountdown
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
