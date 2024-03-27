@@ -63,6 +63,8 @@
             // 
             // txtUserStatus
             // 
+            txtUserStatus.BackColor = SystemColors.InactiveBorder;
+            txtUserStatus.Enabled = false;
             txtUserStatus.Location = new Point(733, 460);
             txtUserStatus.Margin = new Padding(5);
             txtUserStatus.Name = "txtUserStatus";
@@ -91,6 +93,8 @@
             // 
             // txtCaloriesPDay
             // 
+            txtCaloriesPDay.BackColor = SystemColors.InactiveBorder;
+            txtCaloriesPDay.Enabled = false;
             txtCaloriesPDay.Location = new Point(733, 382);
             txtCaloriesPDay.Margin = new Padding(5);
             txtCaloriesPDay.Name = "txtCaloriesPDay";
@@ -99,6 +103,8 @@
             // 
             // txtActivityStatus
             // 
+            txtActivityStatus.BackColor = SystemColors.InactiveBorder;
+            txtActivityStatus.Enabled = false;
             txtActivityStatus.Location = new Point(733, 285);
             txtActivityStatus.Margin = new Padding(5);
             txtActivityStatus.Name = "txtActivityStatus";
@@ -177,6 +183,8 @@
             // 
             // txtHeight
             // 
+            txtHeight.BackColor = SystemColors.InactiveBorder;
+            txtHeight.Enabled = false;
             txtHeight.Location = new Point(733, 185);
             txtHeight.Margin = new Padding(5);
             txtHeight.Name = "txtHeight";
@@ -185,6 +193,8 @@
             // 
             // txtWeight
             // 
+            txtWeight.BackColor = SystemColors.InactiveBorder;
+            txtWeight.Enabled = false;
             txtWeight.Location = new Point(733, 97);
             txtWeight.Margin = new Padding(5);
             txtWeight.Name = "txtWeight";
@@ -193,6 +203,8 @@
             // 
             // txtPassword
             // 
+            txtPassword.BackColor = SystemColors.InactiveBorder;
+            txtPassword.Enabled = false;
             txtPassword.Location = new Point(227, 470);
             txtPassword.Margin = new Padding(5);
             txtPassword.Name = "txtPassword";
@@ -201,6 +213,8 @@
             // 
             // txtGender
             // 
+            txtGender.BackColor = SystemColors.InactiveBorder;
+            txtGender.Enabled = false;
             txtGender.Location = new Point(227, 387);
             txtGender.Margin = new Padding(5);
             txtGender.Name = "txtGender";
@@ -209,6 +223,8 @@
             // 
             // txtLastName
             // 
+            txtLastName.BackColor = SystemColors.InactiveBorder;
+            txtLastName.Enabled = false;
             txtLastName.Location = new Point(227, 185);
             txtLastName.Margin = new Padding(5);
             txtLastName.Name = "txtLastName";
@@ -217,6 +233,8 @@
             // 
             // txtBirthDate
             // 
+            txtBirthDate.BackColor = SystemColors.InactiveBorder;
+            txtBirthDate.Enabled = false;
             txtBirthDate.Location = new Point(227, 285);
             txtBirthDate.Margin = new Padding(5);
             txtBirthDate.Name = "txtBirthDate";
@@ -225,6 +243,8 @@
             // 
             // txtFirstName
             // 
+            txtFirstName.BackColor = SystemColors.InactiveBorder;
+            txtFirstName.Enabled = false;
             txtFirstName.Location = new Point(227, 102);
             txtFirstName.Margin = new Padding(5);
             txtFirstName.Name = "txtFirstName";

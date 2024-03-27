@@ -90,6 +90,7 @@
             pBoxFoodImg.Margin = new Padding(5);
             pBoxFoodImg.Name = "pBoxFoodImg";
             pBoxFoodImg.Size = new Size(394, 317);
+            pBoxFoodImg.SizeMode = PictureBoxSizeMode.StretchImage;
             pBoxFoodImg.TabIndex = 16;
             pBoxFoodImg.TabStop = false;
             // 
