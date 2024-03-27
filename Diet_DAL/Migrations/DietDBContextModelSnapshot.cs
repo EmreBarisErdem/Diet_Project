@@ -1626,7 +1626,7 @@ namespace Diet_DAL.Migrations
                     b.Property<int>("PersonID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TotalCaloriesByMeal")
+                    b.Property<int>("TotalCaloriesByMeal")
                         .HasMaxLength(5000)
                         .HasColumnType("integer");
 

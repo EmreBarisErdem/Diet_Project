@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Diet_DAL.Migrations
 {
     [DbContext(typeof(DietDBContext))]
-    [Migration("20240326204254_SAKAMIII")]
-    partial class SAKAMIII
+    [Migration("20240326213922_Diet")]
+    partial class Diet
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1629,7 +1629,7 @@ namespace Diet_DAL.Migrations
                     b.Property<int>("PersonID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TotalCaloriesByMeal")
+                    b.Property<int>("TotalCaloriesByMeal")
                         .HasMaxLength(5000)
                         .HasColumnType("integer");
 
