@@ -20,7 +20,7 @@ namespace Diet_DAL.Repositories.Concrete
 
         public List<FoodSales> GetFoodAndMaxQuantity()
         {
-            return _dbContext.FoodSales.FromSqlRaw("SELECT mf.FoodID,f.Name, SUM(f.Quantity) as 'MaxQuantity'\r\nFROM Menus m INNER JOIN MenuFoods mf  ON mf.MenuID = m.MenuID\r\nINNER JOIN Foods f ON f.FoodID = mf.FoodID\r\nGROUP BY mf.FoodID,f.Name\r\nORDER BY 'MaxQuantity' DESC").ToList();
+            return _dbContext.FoodSales.FromSqlRaw("SELECT mf.FoodID,f.Name, SUM(mf.FoodQuantity) as 'MaxQuantity'\r\nFROM Menus m INNER JOIN MenuFoods mf  ON mf.MenuID = m.MenuID\r\nINNER JOIN Foods f ON f.FoodID = mf.FoodID\r\nGROUP BY mf.FoodID,f.Name\r\nORDER BY 'MaxQuantity' DESC").ToList();
         }
     }
 }

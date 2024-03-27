@@ -1660,6 +1660,9 @@ namespace Diet_DAL.Migrations
                     b.Property<int>("FoodID")
                         .HasColumnType("int");
 
+                    b.Property<int>("FoodQuantity")
+                        .HasColumnType("int");
+
                     b.Property<int>("MenuID")
                         .HasColumnType("int");
 

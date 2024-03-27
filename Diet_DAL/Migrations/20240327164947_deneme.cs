@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Diet_DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class SON_HAL : Migration
+    public partial class deneme : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -136,7 +136,8 @@ namespace Diet_DAL.Migrations
                     MenuFoodsID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MenuID = table.Column<int>(type: "int", nullable: false),
-                    FoodID = table.Column<int>(type: "int", nullable: false)
+                    FoodID = table.Column<int>(type: "int", nullable: false),
+                    FoodQuantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

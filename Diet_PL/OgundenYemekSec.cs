@@ -281,6 +281,7 @@ namespace Diet_PL
 
                     menuFood.Menu = menuServices.GetMenu(menu.MenuID);
                     menuFood.Food = foodServices.GetByID(food.FoodID);
+                    menuFood.FoodQuantity = food.Quantity;
 
                     menuFoods.Add(menuFood);
 
@@ -342,6 +343,7 @@ namespace Diet_PL
 
                     menuFood.Menu = menuServices.GetMenu(menu.MenuID);
                     menuFood.Food = foodServices.GetByID(food.FoodID);
+                    menuFood.FoodQuantity = food.Quantity;
 
                     menuFoods.Add(menuFood);
 
@@ -405,6 +407,7 @@ namespace Diet_PL
 
                     menuFood.Menu = menuServices.GetMenu(menu.MenuID);
                     menuFood.Food = foodServices.GetByID(food.FoodID);
+                    menuFood.FoodQuantity = food.Quantity;
 
                     menuFoods.Add(menuFood);
 
