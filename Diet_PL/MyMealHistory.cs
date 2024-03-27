@@ -91,7 +91,7 @@ namespace Diet_PL
 
         private void btn_MaxFood_Click(object sender, EventArgs e)
         {
-
+            lvi_FoodSales.Items.Clear();
 
             List<FoodSales> foodSales = foodSalesServices.GetFoodAndMaxQuantity();
 

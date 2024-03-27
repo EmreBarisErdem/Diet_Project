@@ -8,11 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Diet_DAL.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:Diet_DAL/Migrations/20240326213922_Diet.cs
-    public partial class Diet : Migration
-========
-    public partial class deneme : Migration
->>>>>>>> c30c6431bf9405993a1e6294b5bfd8e46c67f9d5:Diet_DAL/Migrations/20240327101050_deneme.cs
+    public partial class SON_HAL : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -28,6 +24,18 @@ namespace Diet_DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FoodCategories", x => x.FoodCategoryID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FoodSales",
+                columns: table => new
+                {
+                    FoodID = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MaxQuantity = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
                 });
 
             migrationBuilder.CreateTable(
@@ -342,6 +350,9 @@ namespace Diet_DAL.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "FoodSales");
+
             migrationBuilder.DropTable(
                 name: "MenuFoods");
 

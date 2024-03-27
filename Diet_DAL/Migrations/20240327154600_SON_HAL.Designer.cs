@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Diet_DAL.Migrations
 {
     [DbContext(typeof(DietDBContext))]
-<<<<<<<< HEAD:Diet_DAL/Migrations/20240326213922_Diet.Designer.cs
-    [Migration("20240326213922_Diet")]
-    partial class Diet
-========
-    [Migration("20240327101050_deneme")]
-    partial class deneme
->>>>>>>> c30c6431bf9405993a1e6294b5bfd8e46c67f9d5:Diet_DAL/Migrations/20240327101050_deneme.Designer.cs
+    [Migration("20240327154600_SON_HAL")]
+    partial class SON_HAL
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

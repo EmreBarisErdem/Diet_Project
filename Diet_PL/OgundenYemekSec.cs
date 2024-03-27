@@ -191,9 +191,16 @@ namespace Diet_PL
 
         private void btn_Remove_Breakfast_Click_1(object sender, EventArgs e)
         {
-            if (lbox_Breakfast.Items.Count > 0 && lbox_Breakfast.SelectedIndex != -1)
+            if (lbox_Breakfast.Items.Count > 0)
             {
-                lbox_Breakfast.Items.RemoveAt(lbox_Breakfast.SelectedIndex);
+                if (lbox_Breakfast.SelectedIndex != -1)
+                {
+                    lbox_Breakfast.Items.Remove((Food)lbox_Breakfast.SelectedItem);
+                }
+                else
+                {
+                    MessageBox.Show("You must choose the food that you want to remove!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
                 BreakFastCaloriesCalculator(out int totalCalories);
             }
@@ -205,9 +212,16 @@ namespace Diet_PL
 
         private void btn_Remove_Lunch_Click_1(object sender, EventArgs e)
         {
-            if (lbox_Lunch.Items.Count > 0 && lbox_Lunch.SelectedIndex != -1)
+            if (lbox_Lunch.Items.Count > 0)
             {
-                lbox_Lunch.Items.RemoveAt(lbox_Lunch.SelectedIndex);
+                if (lbox_Lunch.SelectedIndex != -1)
+                {
+                    lbox_Lunch.Items.Remove((Food)lbox_Lunch.SelectedItem);
+                }
+                else
+                {
+                    MessageBox.Show("You must choose the food that you want to remove!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
                 LunchCaloriesCalculator(out int totalCalories);
             }
@@ -219,9 +233,17 @@ namespace Diet_PL
 
         private void btn_Remove_Dinner_Click(object sender, EventArgs e)
         {
-            if (lbox_Dinner.Items.Count > 0 && lbox_Dinner.SelectedIndex != -1)
+            if (lbox_Dinner.Items.Count > 0)
             {
-                lbox_Dinner.Items.RemoveAt(lbox_Dinner.SelectedIndex);
+                if (lbox_Dinner.SelectedIndex != -1) 
+                {
+                    lbox_Dinner.Items.Remove((Food)lbox_Dinner.SelectedItem);
+                }
+                else
+                {
+                    MessageBox.Show("You must choose the food that you want to remove!","Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
 
                 DinnerCaloriesCalculator(out int totalCalories);
             }
