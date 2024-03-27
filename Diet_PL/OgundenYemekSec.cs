@@ -235,15 +235,15 @@ namespace Diet_PL
         {
             if (lbox_Dinner.Items.Count > 0)
             {
-                if (lbox_Dinner.SelectedIndex != -1) 
+                if (lbox_Dinner.SelectedIndex != -1)
                 {
                     lbox_Dinner.Items.Remove((Food)lbox_Dinner.SelectedItem);
                 }
                 else
                 {
-                    MessageBox.Show("You must choose the food that you want to remove!","Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("You must choose the food that you want to remove!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                
+
 
                 DinnerCaloriesCalculator(out int totalCalories);
             }
@@ -255,8 +255,8 @@ namespace Diet_PL
 
         private void btn_Transfer_Breakfast_Click_1(object sender, EventArgs e)
         {
+
             Menu menu = new Menu();
-            
 
             Meal meal = mealServices.GetMealByID(1); // 1 == Breakfast
 
@@ -268,13 +268,15 @@ namespace Diet_PL
             Person person = personServices.GetPersonByID(personID);
             menu.PersonID = person.PersonID;
 
-            bool control = menuServices.AddMenu(menu);
-
-            List<MenuFoods> menuFoods = new List<MenuFoods>();
-
-
             if (lbox_Breakfast.Items.Count > 0)
             {
+
+                bool control = menuServices.AddMenu(menu);
+
+                List<MenuFoods> menuFoods = new List<MenuFoods>();
+
+
+
                 foreach (Food food in lbox_Breakfast.Items)
                 {
                     MenuFoods menuFood = new MenuFoods();
@@ -291,7 +293,7 @@ namespace Diet_PL
                     menuFoodServices.AddOrUpdate(menuFood);
                 }
 
-                
+
 
 
                 if (control)
@@ -318,7 +320,7 @@ namespace Diet_PL
         private void btn_Transfer_Lunch_Click_1(object sender, EventArgs e)
         {
             Menu menu = new Menu();
-            
+
 
             Meal meal = mealServices.GetMealByID(2); // 2 == Lunch
 
@@ -330,13 +332,14 @@ namespace Diet_PL
             Person person = personServices.GetPersonByID(personID);
             menu.PersonID = person.PersonID;
 
-            bool control = menuServices.AddMenu(menu);
-
-            List<MenuFoods> menuFoods = new List<MenuFoods>();
-           
-
             if (lbox_Lunch.Items.Count > 0)
             {
+                bool control = menuServices.AddMenu(menu);
+
+                List<MenuFoods> menuFoods = new List<MenuFoods>();
+
+
+
                 foreach (Food food in lbox_Lunch.Items)
                 {
                     MenuFoods menuFood = new MenuFoods();
@@ -353,7 +356,7 @@ namespace Diet_PL
 
                     menuFoodServices.AddOrUpdate(menuFood);
                 }
-               
+
 
 
                 if (control)
@@ -375,14 +378,12 @@ namespace Diet_PL
                 MessageBox.Show("There is No Food To Add", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-
-
         }
 
         private void btn_Transfer_Dinner_Click_1(object sender, EventArgs e)
         {
             Menu menu = new Menu();
-            
+
 
             Meal meal = mealServices.GetMealByID(3); // 3 == Dinner
 
@@ -394,13 +395,13 @@ namespace Diet_PL
             Person person = personServices.GetPersonByID(personID);
             menu.PersonID = person.PersonID;
 
-            bool control = menuServices.AddMenu(menu);
-
-
-            List<MenuFoods> menuFoods = new List<MenuFoods>();
-
             if (lbox_Dinner.Items.Count > 0)
             {
+                bool control = menuServices.AddMenu(menu);
+
+                List<MenuFoods> menuFoods = new List<MenuFoods>();
+
+
                 foreach (Food food in lbox_Dinner.Items)
                 {
                     MenuFoods menuFood = new MenuFoods();
@@ -414,16 +415,13 @@ namespace Diet_PL
                     food.MenuFoods = menuFoods;
                     menu.MenuFoods = menuFoods;
 
-
                     menuFoodServices.AddOrUpdate(menuFood);
                 }
-                
+
 
                 if (control)
                 {
-
                     MessageBox.Show("Menu Added Succesfully", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 else
                 {
@@ -431,15 +429,13 @@ namespace Diet_PL
                 }
 
                 lbox_Dinner.Items.Clear();
+
                 lbl_Dinner_Calories.Text = "... Calories";
             }
             else
             {
                 MessageBox.Show("There is No Food To Add", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
-
 
 
         }

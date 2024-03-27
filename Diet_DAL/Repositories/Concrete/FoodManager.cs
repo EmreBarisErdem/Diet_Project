@@ -22,7 +22,7 @@ namespace CalorieProject_DAL.Repositories.Concrete
 
         public List<Food> GetFoodWithWords(string word)
         {
-            return _dbContext.Foods.Where(x=>x.Name.StartsWith(word)).ToList();
+            return _dbContext.Foods.Where(x=>x.Name.Contains(word)).ToList();
         }
 
         public List<MenuFoods> GetFoodFromMenu(int menuID)
