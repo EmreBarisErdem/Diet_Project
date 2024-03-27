@@ -38,22 +38,24 @@ namespace Diet_PL
             {
                 selectedPerson.UserStatus = UserStatus.Inactive;
 
+                bool control = personServices.AddOrUpdate(selectedPerson);
+
+                if (control)
+                {
+                    MessageBox.Show("User Activity Changed To Inactive ", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("A Problem Occured While Changing Status", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
             else
             {
                 MessageBox.Show("You Can Not Ban Another Admin Be Careful", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            bool control = personServices.AddOrUpdate(selectedPerson);
-
-            if (control)
-            {
-                MessageBox.Show("User Activity Changed To Inactive ", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("A Problem Occured While Changing Status", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+       
         }
 
         private void Admin_Load_1(object sender, EventArgs e)
