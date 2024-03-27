@@ -62,6 +62,8 @@ namespace Diet_DAL.Repositories.Concrete
                 .Where(x => (x.MealDate.Month == selectedMonth.Month) && x.PersonID == personID)
                 .ToList();
         }
+
+   
     }
 
 }

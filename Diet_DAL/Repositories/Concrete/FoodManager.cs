@@ -24,9 +24,9 @@ namespace CalorieProject_DAL.Repositories.Concrete
             return _dbContext.Foods.Where(x=>x.Name.StartsWith(word)).ToList();
         }
 
-        public List<Food> GetFoodFromMenu(int menuID)
+        public List<MenuFoods> GetFoodFromMenu(int menuID)
         {
-            return _dbContext.Foods.Include(x => x.FoodCategory).Include(x => x.Menu).Where(x => x.Menu.MenuID == menuID).ToList();
+            return _dbContext.MenuFoods.Include(x=>x.Food.FoodCategory).Include(x=>x.Menu).Where(x=>x.MenuID == menuID).ToList();
         }
 
     }

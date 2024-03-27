@@ -28,7 +28,8 @@ namespace Diet_Models.Concretes
         public Portion Portion { get; set; } = Portion.Standart;
 
         
-        public int TotalCalories { get; set; } 
+        public int TotalCalories { get; set; }
+
 
 
 
@@ -38,7 +39,7 @@ namespace Diet_Models.Concretes
 
         public virtual FoodCategory? FoodCategory { get; set; }
 
-        public Menu? Menu { get; set; }
+        public ICollection<MenuFoods> MenuFoods { get; set; }
 
         public override string ToString()
         {

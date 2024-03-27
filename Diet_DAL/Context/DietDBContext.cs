@@ -17,6 +17,8 @@ namespace CalorieProject_DAL.Context
 
         public DbSet<FoodCategory> FoodCategories { get; set; }
 
+        public DbSet<MenuFoods> MenuFoods { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

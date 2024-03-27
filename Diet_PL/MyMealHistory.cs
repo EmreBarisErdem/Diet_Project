@@ -33,6 +33,9 @@ namespace Diet_PL
 
         private void btnDailyData_Click(object sender, EventArgs e)
         {
+
+            lvi_Meal.Items.Clear();
+
             List<Menu> menus = menuServices.GetMenusForPeople(personID);
 
             Person person = personServices.GetPersonByID(personID);
@@ -61,14 +64,17 @@ namespace Diet_PL
             lvi_Food.Items.Clear();
 
             Menu menu = (Menu)lvi_Meal.FocusedItem.Tag;
-            List<Food> menuFood = foodServices.GetFoodFromMenu(menu.MenuID);
 
-            foreach (Food food in menuFood)
+            Menu selectedMenu = menuServices.GetMenu(menu.MenuID);
+
+            List<MenuFoods> menuFoods = foodServices.GetFoodFromMenu(selectedMenu.MenuID);
+
+            foreach (MenuFoods menuFood in menuFoods)
             {
-                string[] foodInfo = { food.FoodCategory.FoodCategoryName, food.Name, food.Quantity.ToString(),food.TotalCalories.ToString() };
+                string[] foodInfo = { menuFood.Food.FoodCategory.FoodCategoryName, menuFood.Food.Name, menuFood.Food.Quantity.ToString(), menuFood.Food.TotalCalories.ToString() };
 
                 ListViewItem lvi = new ListViewItem(foodInfo);
-                lvi.Tag = food;
+                lvi.Tag = menuFood;
 
                 lvi_Food.Items.Add(lvi);
             }

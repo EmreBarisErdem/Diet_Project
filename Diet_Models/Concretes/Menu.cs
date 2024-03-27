@@ -28,7 +28,7 @@ namespace Diet_Models.Concretes
 
 
 
-        public ICollection<Food>? Foods { get; set; }
+        public ICollection<MenuFoods>? MenuFoods { get; set; }
 
         public Person? Person { get; set; }
 
